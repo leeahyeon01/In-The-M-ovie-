@@ -1,14 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script>
-      console.log("hello");
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> In The M(ovie) Index </title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: gray;
+    }
+
+    #root {
+      width: 100vw;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    iframe {
+      width: 100vw;
+    }
+
+    #headerFrame {
+
+      height: 7vh;
+    }
+
+    #footerFrame {
+
+      height: 16vh;
+    }
+
+    main {
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+
+    section {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    section>div:nth-of-type(1) {
+      width: 100%;
+      display: flex;
+    }
+    section>div:nth-of-type(1)>div:nth-of-type(1) {
+      width: 80%;
+      height: 100%;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+      color: white;
+    }
+
+    section>div:nth-of-type(1)>div:nth-of-type(2) {
+      width: 80vw;
+    }
+
+    video {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <iframe id="headerFrame" src="./views/header.html" frameborder="0"></iframe>
+    <main>
+      <section>
+        <div>
+          <div>설명란</div>
+          <div>
+            <video src="./source/video/Gongjo2.mp4" autoplay controls loop></video>
+          </div>
+        </div>
+        <div> 박스 오피스 </div>
+        <div> 랜덤 영화 추천 </div>
+      </section>
+    </main>
+    <iframe id="footerFrame" src="./views/footer.html" frameborder="0"></iframe>
+  </div>
+
+  <script>
+  </script>
+</body>
+
 </html>

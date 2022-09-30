@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#aside {
+  width: 20vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+#aside > div:nth-child(1) {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#aside > div:nth-child(1) > div:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  background-image: url(./fa6-solid_user-gear.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+#aside > div:nth-child(1) > div:nth-child(2) {
+  width: 90px;
+  height: 30px;
+}
+#aside > div:nth-child(1) > div:nth-child(2) > p {
+  text-align: left;
+  font-weight: bold;
+}
+#aside > div:nth-child(2) {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(173, 166, 166);
+}
+#aside > div:nth-child(2) > div:nth-child(1) {
+  width: 200px;
+  height: 30px;
+  margin-top: 2rem;
+}
+#aside > div:nth-child(2) > div:nth-child(1) > p {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+#aside > div:nth-child(2) > div:nth-child(2) {
+  width: 200px;
+  height: 30px;
+  margin-top: 2rem;
+}
+#aside > div:nth-child(2) > div:nth-child(3) {
+  width: 200px;
+  height: 30px;
+  margin-top: 2rem;
+}/*# sourceMappingURL=info_aside.css.map */

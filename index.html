@@ -11,36 +11,58 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      background-color: gray;
     }
 
     #root {
-      width: 100vw;
+      width: 100%;
       height: auto;
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
       align-content: center;
       justify-content: center;
+      align-items: center;      
+    }
+
+
+    header {
+      width: 100%;
+      height: 2vw;
+      background-color: rgba(20, 1, 1, 1);
+      color: white;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: flex-end;
       align-items: center;
     }
 
-    iframe {
-      width: 100vw;
+    header>div {
+      width: 40vw;
+      background-color: rgba(20, 1, 1, 1);
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: space-evenly;
+      align-items: center;
     }
 
-    #headerFrame {
-
-      height: 7vh;
+    header>div>div:nth-of-type(2) {
+      background-color: rgba(20, 1, 1, 1);
+      display: flex;
     }
 
-    #footerFrame {
-
-      height: 16vh;
+    header>div>div:nth-of-type(2)>div:nth-of-type(2),
+    header>div>div:nth-of-type(2)>div:nth-of-type(3) {
+      display: none;
     }
+
+
 
     main {
-      width: 100vw;
+      width: 100%;
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
@@ -48,8 +70,6 @@
       justify-content: center;
       align-items: center;
     }
-
-
 
     section {
       width: 100%;
@@ -60,48 +80,141 @@
       align-content: center;
       justify-content: center;
       align-items: center;
+      background-color: black;
     }
 
     section>div:nth-of-type(1) {
       width: 100%;
       display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
     }
+
     section>div:nth-of-type(1)>div:nth-of-type(1) {
       width: 80%;
-      height: 100%;
+      height: 35vw;
       z-index: 1;
       background: linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
       color: white;
+      position: absolute;      
     }
+    
 
     section>div:nth-of-type(1)>div:nth-of-type(2) {
-      width: 80vw;
+      width: 65%;
     }
 
     video {
       width: 100%;
+    }
+
+    nav {
+      width: 100%;
+      height: 30vh;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: space-around;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    nav>div {
+      width: 35vh;
+      height: 8vh;
+      background-color: red;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+    }
+
+    footer {
+      width: 100%;
+      height: 16vh;
+      background-color: blue;
     }
   </style>
 </head>
 
 <body>
   <div id="root">
-    <iframe id="headerFrame" src="./views/header.html" frameborder="0"></iframe>
+    <header>
+      <div>
+        <div>
+          <div>검색</div>
+        </div>
+
+        <div>
+          <div>
+            <div>로그인</div>
+          </div>
+          <div>
+            <div>로그아웃</div>
+          </div>
+          <div>
+            <div>내 정보 보기</div>
+          </div>
+        </div>
+
+        <div>
+          <div>게시판</div>
+        </div>
+      </div>
+    </header>
+
     <main>
       <section>
         <div>
           <div>설명란</div>
           <div>
-            <video src="./source/video/Gongjo2.mp4" autoplay controls loop></video>
+            <video src="./source/video/TopGunMaverrick.mp4" autoplay controls loop muted></video>
           </div>
         </div>
-        <div> 박스 오피스 </div>
-        <div> 랜덤 영화 추천 </div>
       </section>
-    </main>
-    <iframe id="footerFrame" src="./views/footer.html" frameborder="0"></iframe>
-  </div>
 
+      <nav>
+        <div>
+          <div>장르</div>
+        </div>
+        <div>
+          <div>장르</div>
+        </div>
+        <div>
+          <div>장르</div>
+        </div>
+        <div>
+          <div>장르</div>
+        </div>
+        <div>
+          <div>장르</div>
+        </div>
+        <div>
+          <div>장르</div>
+        </div>
+        <div>
+          <div>장르</div>
+        </div>
+        <div>
+          <div>장르</div>
+        </div>
+        <div>
+          <div>장르</div>
+        </div>
+        <div>
+          <div>장르</div>
+        </div>
+      </nav>
+    </main>
+
+    <footer>푸터입니다.</footer>
+  </div>
   <script>
   </script>
 </body>

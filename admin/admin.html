@@ -476,39 +476,51 @@
   </div>
 
   <script>
-    const root = document.getElementById('root');
+    const root = document.getElementById('root'); 
     console.dir(root);
     const aside = root.children[0].children[0];
     const main = root.children[0].children[1];
     const clickDiv = document.getElementsByClassName('clickDiv');
     console.log(clickDiv);
 
-    let sectValue = main.children.dataset.sect;
-    console.log(sectValue);
-    let divValue = clickDiv.dataset.div;
-    console.log(divValue);
+    // let sectValue = main.children.dataset.sect;
+    // console.log(sectValue);
+    // let divValue = clickDiv.dataset.div;
+    // console.log(divValue);
+
+
+    for(let i=0; i<clickDiv.length; i++){
+      clickDiv[i].addEventListener('click', (event)=>{
+      console.log(event);
+      console.dir(event.target.dataset);
+      
+    });
+    }
     
 
-    for(let i =0; i < clickDiv.length; i++) {
-      clickDiv[i].addEventListener('click', (event)=>{
-        console.log(main.children[i].dataset);
-        console.log(clickDiv[i].dataset);
-        // clickDiv[i].style.fontWeight = "bold";
-        // clickDiv[i].style.color = "red";
-        // main.children[i].style.display = "flex";
-        // if(main.children[i].dataset !== clickDiv[i].dataset) {
-        //   main.children[i].style.display = "none";
-        //   clickDiv[i].style.fontWeight = "";
-        //   clickDiv[i].style.color = "white";
-        // }
-      });
-    }
+    // for(let i =0; i < clickDiv.length; i++) {      
+    //   main.children[i].style.display = "none";
+    //   clickDiv[i].style.fontWeight = "";
+    //   clickDiv[i].style.color = "white";
+
+
+    //   clickDiv[i].addEventListener('click', (event)=>{
+    //     //console.log(main.children[i].dataset);
+    //     //console.log(clickDiv[i].dataset);
+    //     //console.log(event)
+
+    //     clickDiv[i].style.fontWeight = "bold";
+    //     clickDiv[i].style.color = "red";
+    //     main.children[i].style.display = "flex";
+
+    //   });
+    // }
 
     const addUser = document.getElementById('addUser');
     const upDatUser = document.getElementById('upDatUser');
     const upMedia = document.getElementById('upMedia');
     const mngBoard = document.getElementById('mngBoard');
-    const statVsitor = document.getElementById('statVsitor');    
+    const statVsitor = document.getElementById('statVsitor');
 
     const targetAddUser = document.getElementById('targetAddUser');
     const targetUpDatUser = document.getElementById('targetUpDatUser');

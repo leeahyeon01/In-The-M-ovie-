@@ -78,16 +78,16 @@
 
     function slide_menu() {
       if (subToggle) {
-        //console.log("a" + subToggle)
+        //console.log("a : " + subToggle)
         clearInterval(_down);
         _up = setInterval(up, framerate);
         subToggle = !subToggle;
-        //console.log("b" + subToggle)
+        //console.log("b : " + subToggle)
       } else {
         clearInterval(_up);
         _down = setInterval(down, framerate);
         subToggle = !subToggle;
-        //console.log("c" + subToggle)
+        //console.log("c : " + subToggle)
       }
     }
 

@@ -17,13 +17,7 @@
     html {
       scroll-behavior: smooth;
     }
-    ul { 
-      list-style-type: none;
-      padding: 1vw;
-    }
-    ul>li{
-      height: 3vh;
-    }
+
     a {
       color: aliceblue;
     }
@@ -31,11 +25,8 @@
       text-decoration: none;
     }
     a:visited {
-      text-decoration: none;      
-    }
-    a:hover {
-      background-color: coral;
-    }
+      text-decoration: none;
+    }    
 
     #admin {
       width: 99vw;
@@ -84,6 +75,7 @@
       cursor: pointer;
       text-decoration: underline;
       font-weight: bold;
+      background-color: coral;
     }
 
     #targetAddUser,
@@ -223,6 +215,7 @@
     #menuStat>div:nth-of-type(1):hover {
       cursor: pointer;
       font-weight: bold;
+      background-color: red;
     }
   </style>
 </head>
@@ -239,23 +232,23 @@
           <div id="menuClient">
             <div>회원 관리</div>
             <div>
-              <div id="addUser" class="clickDiv" data-divdat="1"><a href="#one">º회원추가</a></div>
-              <a id="upDatUser" class="clickDiv" data-divdat="2"><a href="#two">º조회, 수정, 삭제</a></div>
+              <a href="#one"><div id="addUser" class="clickDiv" data-divdat="1" >º회원추가</div></a>
+              <a href="#two"><div id="upDatUser" class="clickDiv" data-divdat="2" >º조회, 수정, 삭제</div></a>
             </div>
           </div>
         
           <div id="menuContent">
             <div> 컨텐츠 관리</div>
             <div>
-              <div id="upMedia" class="clickDiv" data-divdat="3"><a href="#three"> º메인 화면 관리</a> </div>
-              <div id="mngBoard" class="clickDiv" data-divdat="4"><a href="#four"> º게시판 관리</a></div>
+              <a href="#three"><div id="upMedia" class="clickDiv" data-divdat="3"> º메인 화면 관리 </div></a>
+              <a href="#four"><div id="mngBoard" class="clickDiv" data-divdat="4"> º게시판 관리</div></a>
             </div>
           </div>
         
           <div id="menuStat">
             <div> 통계</div>
             <div>
-              <div id="statVsitor" class="clickDiv" data-divdat="5"> <a href="#five"> º방문자 통계</a></div>
+              <a href="#five"><div id="statVsitor" class="clickDiv" data-divdat="5"> º방문자 통계</div></a>
             </div>
           </div>
         </div>
@@ -510,7 +503,7 @@
     const main = root.children[0].children[1];
     const clickDiv = document.getElementsByClassName('clickDiv');
     const menuDiv = document.getElementById('menuDiv');
-    console.dir(main);
+    //console.dir(main);
     // console.log(typeof clickDiv);
     // console.log(clickDiv);
 
@@ -519,14 +512,13 @@
     // console.log(menuDiv.children[0].children[1].children[0].dataset);
     
     menuDiv.addEventListener('click', (event) => {
-        console.dir(event);
-        console.log(event.path);
-        console.log(event.path[5]);
+        //console.dir(event);
+        //console.log(event.path);
+        //console.log(event.path[5]);
         //console.log(event.path[5].children[1].children);
         //console.dir(event.target);
         //console.log(event.target.dataset);
-        let datasetValue = event.target.dataset.divdat;
-        let sectDatset = event.path[5].children[1].children;
+        let datasetValue = event.target.dataset.divdat;        
         if (datasetValue !== undefined) {
           //console.log(datasetValue);
           for (let i = 0; i < clickDiv.length; i++) {
@@ -549,7 +541,7 @@
             //   main.children[i].style.display = "none";
             // }            
          // }          
-          event.target.style.color = "red";
+          event.target.style.color = "coral";
           event.target.style.fontWeight = "bold";
         }      
       });

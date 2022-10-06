@@ -14,6 +14,28 @@
       padding: 0;
       box-sizing: border-box;
     }
+    html {
+      scroll-behavior: smooth;
+    }
+    ul { 
+      list-style-type: none;
+      padding: 1vw;
+    }
+    ul>li{
+      height: 3vh;
+    }
+    a {
+      color: aliceblue;
+    }
+    a:link {
+      text-decoration: none;
+    }
+    a:visited {
+      text-decoration: none;      
+    }
+    a:hover {
+      background-color: coral;
+    }
 
     #admin {
       width: 99vw;
@@ -26,6 +48,7 @@
       height: 100vw;
       background-color: rgba(26, 26, 26, 1);
       color: white;
+      position: fixed;
     }
 
     aside>div:nth-of-type(1) {
@@ -45,6 +68,11 @@
 
     main {
       width: 85vw;
+    }
+
+    main > section {
+      width: 99vw;
+      height: 100vh;
     }
 
 
@@ -77,7 +105,7 @@
     }
 
     #targetUpDatUser {
-      display: none;
+      display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
       align-content: center;
@@ -95,7 +123,7 @@
     }
 
     #targetUpMedia {
-      display: none;
+      display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
       align-content: center;
@@ -112,7 +140,7 @@
     }
 
     #targetMngBoard {
-      display: none;
+      display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
       align-content: center;
@@ -145,7 +173,7 @@
 
 
     #targetStatVisior {
-      display: none;
+      display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
       align-content: center;
@@ -207,34 +235,34 @@
           <img src="./img/admin-icon02.png" alt="관리자 아이콘">
         </div>
 
-        <div id="menuClient">
-          <div>회원 관리</div>
-          <div>
-            <div id="addUser" class="clickDiv" data-Div="1">º회원추가</div>
-            <div id="upDatUser" class="clickDiv" data-Div="2">º조회, 수정, 삭제</div>
+        <div id="menuDiv">
+          <div id="menuClient">
+            <div>회원 관리</div>
+            <div>
+              <div id="addUser" class="clickDiv" data-divdat="1"><a href="#one">º회원추가</a></div>
+              <a id="upDatUser" class="clickDiv" data-divdat="2"><a href="#two">º조회, 수정, 삭제</a></div>
+            </div>
           </div>
-        </div>
-
-        <div id="menuContent">
-          <div> 컨텐츠 관리</div>
-          <div>
-            <div id="upMedia" class="clickDiv" data-Div="3"> º메인 화면 관리 </div>
-            <div id="mngBoard" class="clickDiv" data-Div="4">º게시판 관리</div>
+        
+          <div id="menuContent">
+            <div> 컨텐츠 관리</div>
+            <div>
+              <div id="upMedia" class="clickDiv" data-divdat="3"><a href="#three"> º메인 화면 관리</a> </div>
+              <div id="mngBoard" class="clickDiv" data-divdat="4"><a href="#four"> º게시판 관리</a></div>
+            </div>
           </div>
-        </div>
-
-        <div id="menuStat">
-          <div> 통계</div>
-          <div>
-            <div id="statVsitor" class="clickDiv" data-Div="5">
-              º방문자 통계
+        
+          <div id="menuStat">
+            <div> 통계</div>
+            <div>
+              <div id="statVsitor" class="clickDiv" data-divdat="5"> <a href="#five"> º방문자 통계</a></div>
             </div>
           </div>
         </div>
       </aside>
 
       <main>
-        <section data-sect="1">
+        <section data-sectdat="1" id="one">
           <form action="#" method="post">
             <div id="targetAddUser">
               <div> 회원추가 </div>
@@ -286,7 +314,7 @@
           </form>
         </section>
 
-        <section data-sect="2">
+        <section data-sectdat="2" id="two">
           <form action="" method="post">
             <div id="targetUpDatUser">
               <div>조회수정삭제</div>
@@ -384,7 +412,7 @@
         </section>
 
 
-        <section data-sect="3">
+        <section data-sectdat="3" id="three">
           <div id="targetUpMedia">
             <div>메인화면 관리</div>
 
@@ -404,7 +432,7 @@
           </div>
         </section>
 
-        <section data-sect="4">
+        <section data-sectdat="4" id="four">
           <div id="targetMngBoard">
 
             <div> 게시판 관리 </div>
@@ -433,7 +461,7 @@
           </div>
         </section>
 
-        <section data-sect="5">
+        <section data-sectdat="5" id="five">
           <div id="targetStatVisior">
             <div>방문자 통계</div>
             <div>
@@ -481,22 +509,95 @@
     const aside = root.children[0].children[0];
     const main = root.children[0].children[1];
     const clickDiv = document.getElementsByClassName('clickDiv');
-    console.log(clickDiv);
+    const menuDiv = document.getElementById('menuDiv');
+    console.dir(main);
+    // console.log(typeof clickDiv);
+    // console.log(clickDiv);
+
+    // console.log(menuDiv);
+    // console.dir(menuDiv);
+    // console.log(menuDiv.children[0].children[1].children[0].dataset);
+    
+    menuDiv.addEventListener('click', (event) => {
+        console.dir(event);
+        console.log(event.path);
+        console.log(event.path[5]);
+        //console.log(event.path[5].children[1].children);
+        //console.dir(event.target);
+        //console.log(event.target.dataset);
+        let datasetValue = event.target.dataset.divdat;
+        let sectDatset = event.path[5].children[1].children;
+        if (datasetValue !== undefined) {
+          //console.log(datasetValue);
+          for (let i = 0; i < clickDiv.length; i++) {
+            if (clickDiv[i].dataset.divdat !== datasetValue) {
+              clickDiv[i].style.color = "white";
+              clickDiv[i].style.fontWeight = "";
+            }
+          }  
+          // for(let i = 0; i< main.children.length; i++) {
+          //   //console.log(i);
+          //   //console.log(main.children[i].dataset.sectdat);
+          //   if(main.children[i].dataset.sectdat === datasetValue) {
+          //     main.children[i].style.display = "flex";
+            // } //else {
+            //   main.children[i].style.display = "none";
+            // }
+            
+            // if(main.children[i].dataset.sectdat !== datasetValue) {
+            //   //console.log(main.children[i].dataset.sectdat);
+            //   main.children[i].style.display = "none";
+            // }            
+         // }          
+          event.target.style.color = "red";
+          event.target.style.fontWeight = "bold";
+        }      
+      });
+
+      window.addEventListener('hashchange', ()=>{
+        const urlHash = window.location.href;
+        let getValue = urlHash.substring(urlHash.indexOf("#")+1, urlHash.length);
+      });
+
+    // for(let i=0; i<clickDiv.length; i++) {
+    //   console.log(clickDiv[i].dataset.divdat);
+    //   clickDiv[i].addEventListener('click', (event)=> {
+    //     //console.log('a');
+    //     //console.log(event);
+    //     //console.log(event.target);
+    //     //console.dir(event.target);
+    //     console.log(event.target.dataset.divdat);
+    //     //console.dir(clickDiv[i].dataset.divdat);
+    //     //console.log(event.target.dataset);
+    //   });
+    // }
+
+    // clickDiv.addEventListener('click', (event)=>{
+    //   console.log('a');
+    //   console.log(event.target);
+    //   console.dir(event.target.dataset);
+    // });
 
     // let sectValue = main.children.dataset.sect;
     // console.log(sectValue);
     // let divValue = clickDiv.dataset.div;
     // console.log(divValue);
 
-
-    for(let i=0; i<clickDiv.length; i++){
-      clickDiv[i].addEventListener('click', (event)=>{
-      console.log(event);
-      console.dir(event.target.dataset);
-      
-    });
-    }
-    
+  // for (let i = 0; i < clickDiv.length; i++) {
+  //   let datasetValue = clickDiv[i].dataset;
+  //   //console.log(`datasetValue = ${datasetValue}`);
+  //   console.dir(datasetValue);
+  //   clickDiv[i].addEventListener('click', (event) => {
+  //     //console.log(event);
+  //     //console.dir(event.target.dataset);
+  //     if (datasetValue === event.target.dataset) {
+  //       console.log("a");
+  //     }
+  //     if (datasetValue !== event.target.dataset) {
+  //       console.log("b");
+  //     }
+  //   });
+  // }
 
     // for(let i =0; i < clickDiv.length; i++) {      
     //   main.children[i].style.display = "none";
@@ -573,105 +674,105 @@
     dropDownEvent(menuContent, conToggle, countCon);
     dropDownEvent(menuStat, statToggle, countStat);
 
-    addUser.addEventListener('click', (event) => {
-      targetAddUser.style.display = "flex";
-      targetUpDatUser.style.display = "none";
-      targetMngBoard.style.display = "none";
-      targetStatVisior.style.display = "none";
-      targetUpMedia.style.display = "none";
+    // addUser.addEventListener('click', (event) => {
+    //   targetAddUser.style.display = "flex";
+    //   targetUpDatUser.style.display = "none";
+    //   targetMngBoard.style.display = "none";
+    //   targetStatVisior.style.display = "none";
+    //   targetUpMedia.style.display = "none";
 
-      addUser.style.fontWeight = "bold";
-      upDatUser.style.fontWeight = "";
-      mngBoard.style.fontWeight = "";
-      upMedia.style.fontWeight = "";
-      statVsitor.style.fontWeight = "";
+    //   addUser.style.fontWeight = "bold";
+    //   upDatUser.style.fontWeight = "";
+    //   mngBoard.style.fontWeight = "";
+    //   upMedia.style.fontWeight = "";
+    //   statVsitor.style.fontWeight = "";
 
-      addUser.style.color = "red";
-      upDatUser.style.color = "white";
-      mngBoard.style.color = "white";
-      upMedia.style.color = "white";
-      statVsitor.style.color = "white";
-    });
+    //   addUser.style.color = "red";
+    //   upDatUser.style.color = "white";
+    //   mngBoard.style.color = "white";
+    //   upMedia.style.color = "white";
+    //   statVsitor.style.color = "white";
+    // });
 
-    upDatUser.addEventListener('click', (event) => {
-      targetAddUser.style.display = "none";
-      targetUpDatUser.style.display = "flex";
-      targetMngBoard.style.display = "none";
-      targetStatVisior.style.display = "none";
-      targetUpMedia.style.display = "none";
+    // upDatUser.addEventListener('click', (event) => {
+    //   targetAddUser.style.display = "none";
+    //   targetUpDatUser.style.display = "flex";
+    //   targetMngBoard.style.display = "none";
+    //   targetStatVisior.style.display = "none";
+    //   targetUpMedia.style.display = "none";
 
-      addUser.style.fontWeight = "";
-      upDatUser.style.fontWeight = "bold";
-      mngBoard.style.fontWeight = "";
-      upMedia.style.fontWeight = "";
-      statVsitor.style.fontWeight = "";
+    //   addUser.style.fontWeight = "";
+    //   upDatUser.style.fontWeight = "bold";
+    //   mngBoard.style.fontWeight = "";
+    //   upMedia.style.fontWeight = "";
+    //   statVsitor.style.fontWeight = "";
 
-      addUser.style.color = "white";
-      upDatUser.style.color = "red";
-      mngBoard.style.color = "white";
-      upMedia.style.color = "white";
-      statVsitor.style.color = "white";
-    });
+    //   addUser.style.color = "white";
+    //   upDatUser.style.color = "red";
+    //   mngBoard.style.color = "white";
+    //   upMedia.style.color = "white";
+    //   statVsitor.style.color = "white";
+    // });
 
-    mngBoard.addEventListener('click', (event) => {
-      targetAddUser.style.display = "none";
-      targetUpDatUser.style.display = "none";
-      targetMngBoard.style.display = "flex";
-      targetStatVisior.style.display = "none";
-      targetUpMedia.style.display = "none";
+    // mngBoard.addEventListener('click', (event) => {
+    //   targetAddUser.style.display = "none";
+    //   targetUpDatUser.style.display = "none";
+    //   targetMngBoard.style.display = "flex";
+    //   targetStatVisior.style.display = "none";
+    //   targetUpMedia.style.display = "none";
 
-      addUser.style.fontWeight = "";
-      upDatUser.style.fontWeight = "";
-      mngBoard.style.fontWeight = "bold";
-      upMedia.style.fontWeight = "";
-      statVsitor.style.fontWeight = "";
+    //   addUser.style.fontWeight = "";
+    //   upDatUser.style.fontWeight = "";
+    //   mngBoard.style.fontWeight = "bold";
+    //   upMedia.style.fontWeight = "";
+    //   statVsitor.style.fontWeight = "";
 
-      addUser.style.color = "white";
-      upDatUser.style.color = "white";
-      mngBoard.style.color = "red";
-      upMedia.style.color = "white";
-      statVsitor.style.color = "white";
-    });
+    //   addUser.style.color = "white";
+    //   upDatUser.style.color = "white";
+    //   mngBoard.style.color = "red";
+    //   upMedia.style.color = "white";
+    //   statVsitor.style.color = "white";
+    // });
 
-    upMedia.addEventListener('click', (event) => {
-      targetAddUser.style.display = "none";
-      targetUpDatUser.style.display = "none";
-      targetMngBoard.style.display = "none";
-      targetStatVisior.style.display = "none";
-      targetUpMedia.style.display = "flex";
+    // upMedia.addEventListener('click', (event) => {
+    //   targetAddUser.style.display = "none";
+    //   targetUpDatUser.style.display = "none";
+    //   targetMngBoard.style.display = "none";
+    //   targetStatVisior.style.display = "none";
+    //   targetUpMedia.style.display = "flex";
 
-      addUser.style.fontWeight = "";
-      upDatUser.style.fontWeight = "";
-      mngBoard.style.fontWeight = "";
-      upMedia.style.fontWeight = "bold";
-      statVsitor.style.fontWeight = "";
+    //   addUser.style.fontWeight = "";
+    //   upDatUser.style.fontWeight = "";
+    //   mngBoard.style.fontWeight = "";
+    //   upMedia.style.fontWeight = "bold";
+    //   statVsitor.style.fontWeight = "";
 
-      addUser.style.color = "white";
-      upDatUser.style.color = "white";
-      mngBoard.style.color = "white";
-      upMedia.style.color = "red";
-      statVsitor.style.color = "white";
-    });
+    //   addUser.style.color = "white";
+    //   upDatUser.style.color = "white";
+    //   mngBoard.style.color = "white";
+    //   upMedia.style.color = "red";
+    //   statVsitor.style.color = "white";
+    // });
 
-    statVsitor.addEventListener('click', (event) => {
-      targetAddUser.style.display = "none";
-      targetUpDatUser.style.display = "none";
-      targetMngBoard.style.display = "none";
-      targetStatVisior.style.display = "flex";
-      targetUpMedia.style.display = "none";
+    // statVsitor.addEventListener('click', (event) => {
+    //   targetAddUser.style.display = "none";
+    //   targetUpDatUser.style.display = "none";
+    //   targetMngBoard.style.display = "none";
+    //   targetStatVisior.style.display = "flex";
+    //   targetUpMedia.style.display = "none";
 
-      addUser.style.fontWeight = "";
-      upDatUser.style.fontWeight = "";
-      mngBoard.style.fontWeight = "";
-      upMedia.style.fontWeight = "";
-      statVsitor.style.fontWeight = "bold";
+    //   addUser.style.fontWeight = "";
+    //   upDatUser.style.fontWeight = "";
+    //   mngBoard.style.fontWeight = "";
+    //   upMedia.style.fontWeight = "";
+    //   statVsitor.style.fontWeight = "bold";
 
-      addUser.style.color = "white";
-      upDatUser.style.color = "white";
-      mngBoard.style.color = "white";
-      upMedia.style.color = "white";
-      statVsitor.style.color = "red";
-    });
+    //   addUser.style.color = "white";
+    //   upDatUser.style.color = "white";
+    //   mngBoard.style.color = "white";
+    //   upMedia.style.color = "white";
+    //   statVsitor.style.color = "red";
+    // });
 
   </script>
 </body>

@@ -5,12 +5,60 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>  
-  <style></style>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }    
+  </style>
 </head>
 <body>
-  <div id="root">
-    <div id="admin"></div>
-  </div>
-  <script>  </script>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById('root');
+    root.innerHTML = "<div id='indexDiv'></div>";
+    const indexDiv = root.children[0];
+    indexDiv.innerHTML = "<img/> <header></header>"
+    indexDiv.style.width = '99vw';
+    const bg_img = indexDiv.children[0];
+    const header = indexDiv.children[1];
+
+    bg_img.src = "./source/img/bg_dpimg.png";
+    bg_img.style.width = '100%';
+    bg_img.style.position = 'absolute';
+    bg_img.style.zIndex = '-1';
+
+    header.style.width = '100%';
+    header.style.height = '10vh';
+    header.style.backgroundColor = 'rgba(45, 45, 45, 0.5)';
+    //header.style.linearGradient = '(90deg, #303030 0%, rgba(48, 48, 48, 0.5) 70.83%, rgba(48, 48, 48, 0) 100%)';
+    header.style.color = 'rgba(214, 214, 214, 1)';
+    header.innerHTML = '<div></div>';
+    const menuDiv = header.children[0];
+    menuDiv
+    
+
+    console.dir(root);
+    console.dir(indexDiv);
+
+    const tagMaker = (tagName, content) => {
+      this.tagName = tagName;
+      this.content = content;      
+    }
+    
+    //indexDiv.style.backgroundColor = 'red';
+    //indexDiv.style.backgroundImage = 'url("./source/img/bg_dpimg.png")';
+    //indexDiv.style.display = 'flex';
+    
+    // root.innerHTML="<img/>"
+    
+    //root.style.width = "99vw";
+    //root.style.backgroundImage = "url('./source/img/bg_dpimg.png')";    
+    
+    // bg_img.style.width = "99vw";
+    
+    //console.log(bg_img);
+  </script>
 </body>
 </html>

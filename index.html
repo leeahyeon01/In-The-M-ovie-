@@ -19,10 +19,14 @@
     const root = document.getElementById('root');
     root.innerHTML = "<div id='indexDiv'></div>";
     const indexDiv = root.children[0];
-    indexDiv.innerHTML = "<img/> <header></header>"
+    indexDiv.innerHTML = "<img/> <header></header> <main></main>";
     indexDiv.style.width = '99vw';
     const bg_img = indexDiv.children[0];
     const header = indexDiv.children[1];
+    const main = indexDiv.children[2];
+    //console.log(main);
+    main.innerHTML= "<section></section>";
+    const section = main.children[0];
 
     bg_img.src = "./source/img/bg_dpimg.png";
     bg_img.style.width = '100%';
@@ -32,15 +36,22 @@
     header.style.width = '100%';
     header.style.height = '10vh';
     header.style.backgroundColor = 'rgba(45, 45, 45, 0.5)';
+    header.style.display = "flex";
+    header.style.flexDirection = "row-reverse";
+    header.style.flexWrap = "nowrap";    
+    header.style.alignContent = "center";
+    header.style.justifyContent = "flex-start";
+    header.style.alignItems = "center";    
     //header.style.linearGradient = '(90deg, #303030 0%, rgba(48, 48, 48, 0.5) 70.83%, rgba(48, 48, 48, 0) 100%)';
     header.style.color = 'rgba(214, 214, 214, 1)';
     header.innerHTML = '<div></div>';
     const menuDiv = header.children[0];
-    menuDiv
-    
+    menuDiv.innerText = "검색 로그인 게시판";
 
-    console.dir(root);
-    console.dir(indexDiv);
+    main.style.width = '100%';
+
+    //console.dir(root);
+    //console.dir(indexDiv);
 
     const tagMaker = (tagName, content) => {
       this.tagName = tagName;
@@ -49,15 +60,11 @@
     
     //indexDiv.style.backgroundColor = 'red';
     //indexDiv.style.backgroundImage = 'url("./source/img/bg_dpimg.png")';
-    //indexDiv.style.display = 'flex';
-    
-    // root.innerHTML="<img/>"
-    
+    //indexDiv.style.display = 'flex';    
+    // root.innerHTML="<img/>"    
     //root.style.width = "99vw";
-    //root.style.backgroundImage = "url('./source/img/bg_dpimg.png')";    
-    
-    // bg_img.style.width = "99vw";
-    
+    //root.style.backgroundImage = "url('./source/img/bg_dpimg.png')";
+    // bg_img.style.width = "99vw";    
     //console.log(bg_img);
   </script>
 </body>

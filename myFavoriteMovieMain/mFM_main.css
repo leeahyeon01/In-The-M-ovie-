@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  width: 80vw;
+  height: 100vh;
+}
+#app > main {
+  width: 80vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#app > main > div:nth-child(1) {
+  width: 45vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#app > main > div:nth-child(1) > div:nth-child(1) {
+  width: 20vw;
+  height: 25vh;
+  background-image: url(./movie1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#app > main > div:nth-child(1) > div:nth-child(2) {
+  width: 20vw;
+  height: 25vh;
+  background-image: url(./movie2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#app > main > div:nth-child(1) > div:nth-child(3) {
+  width: 20vw;
+  height: 25vh;
+  background-image: url(./movie3.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#app > main > div:nth-child(1) > div:nth-child(4) {
+  width: 20vw;
+  height: 25vh;
+  background-image: url(./movie4.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#app > main > div:nth-child(1) > div:nth-child(5) {
+  width: 20vw;
+  height: 25vh;
+  background-image: url(./movie5.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#app > main > div:nth-child(1) > div:nth-child(6) {
+  width: 20vw;
+  height: 25vh;
+  background-image: url(./movie6.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#app > main > div:nth-child(2) {
+  width: 35vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#app > main > div:nth-child(2) > div {
+  width: 400px;
+  height: 400px;
+  background-image: url(./pentagon.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}/*# sourceMappingURL=mFM_main.css.map */

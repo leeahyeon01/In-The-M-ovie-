@@ -1,28 +1,3 @@
-// const root = document.getElementById('root');
-// const password = document.getElementById('password');
-// const psConfirm = document.getElementById('psConfirm');
-// const nickname = document.getElementById('nickname');
-// const submit = document.getElementById('submit');
-// const button = document.getElementById('button');
-
-const tag={
-  root:document.getElementById('root'),
-  fileLabel:document.getElementById('lbFile'),
-  fileInput: document.getElementById('file'),
-  saveButton:document.getElementById('saveButton'),
-  IDLabe:document.getElementById('lbID'),
-  password:document.getElementById('password'),
-  psConfirm:document.getElementById('psConfirm'),
-  nickname:document.getElementById('nickname'),
-  modify:document.getElementById('modify'),
-  withdraw:document.getElementById('withdraw'),
-
-  modal:document.getElementById('modal'),
-  mButton1:document.getElementById('mButton1'),
-  mButton2:document.getElementById('mButton2')
-}
-// ------------태그들 객체로 묶음--------------------------
-
 const save = document.getElementById('saveButton');
 save.onclick = showImage;
 
@@ -71,19 +46,19 @@ function deleteimage(){
 // ----사진 삭제할 수 있고 삭제하면 다시 기본 사진 뜨게 만든 함수-------- 
 
 
-// function deleteimage(){
-//   const file = input.files;
-//   console.log(file)
-//   const arrayFile = Array.from(file);
-//   console.log(arrayFile);
-//   const emptyAarry = arrayFile.splice(0);
-//   console.log(arrayFile);
+function deleteimage(){
+  const file = input.files;
+  console.log(file)
+  const arrayFile = Array.from(file);
+  console.log(arrayFile);
+  const emptyAarry = arrayFile.splice(0);
+  console.log(arrayFile);
   
-//   let obj = {...arrayFile}
-//   console.log(obj);
-//   let container = document.getElementById('image-show');
-//   container.appendChild(obj);
-// }
+  let obj = {...arrayFile}
+  console.log(obj);
+  let container = document.getElementById('image-show');
+  container.appendChild(obj);
+}
 // 아니 뭐 객체를 배열로 바꾸고 배열초기화하고 다시 객체로 바꾸고 이딴거 필요 없었네 
 
 
@@ -161,4 +136,3 @@ function init(){
 }
 init();
 // --------------------------모달 함수-----------------------------
-

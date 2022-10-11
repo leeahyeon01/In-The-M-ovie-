@@ -20,193 +20,197 @@ $col-4 :#FFFCFC;
   flex-direction: $direction;
 }
 
-#main{
-  // @include size(80vw,100vh);
+#app{
+
   @include size(80vw,100vh);
-  // @include flexSet(center,center,column);  
 
-  &>div:nth-child(1){
-    @include size(100%,30vh);
-    @include flexSet(flex-start,center,row);
-
+  &>main{
+    
+    @include size(80vw,100vh);
+    // @include flexSet(center,center,column);  
+  
     &>div:nth-child(1){
-      @include size(20%,100%);
-      margin-top: 4rem;
-
-      &>p{
-        text-align: center;
-      }
-    }
-
-    &>div:nth-child(2){
-      @include size(auto,auto);
-      @include flexSet(center,flex-start,column);
-      // margin-top: -5rem;
-
-
+      @include size(100%,30vh);
+      @include flexSet(flex-start,center,row);
+  
       &>div:nth-child(1){
-        @include flexSet(center,flex-end,row);
-
-        &>div{
-          @include size(150px,150px);
-        // @include flexSet(center,center,row);
-          background-image: url(./ph_user-circle-fill.png);
-          background-repeat: no-repeat;
-          background-size: 100%;
-        }
-        // 프로필 기본 이미지 
-        
-        &>button{
-          @include size(20px,20px);
-          margin-left: 1rem;
-        }
-      }
-      
-
-      &>div:nth-child(2){
-
-        @include size(400px,30px);
-        @include flexSet(space-around,center,row);
-        background-color:$col-2;
-        margin-top: 1rem;
-
-        &>form{
-          @include size(80%,100%);
-          // margin-left: 2rem;
-          margin-top: 0.5rem;
-        }
-
-      }
-
-    }
-
-    // &>form{
-    //   @include size(80%,100%);
-    //   margin-left: 2rem;
-    //   margin-top: 2rem;
-
-      // &>div:nth-child(1){
-        
-      //   &>img{
-      //     @include size(100px,100px);
-      //     visibility: hidden;
-      //     object-fit: contain;
-        
-      //     background-repeat: no-repeat;
-      //   }
-
-      // }
-
-
-      // &>div:nth-child(2){
-      //   @include size(400px,30px);
-      //   background-color:$col-2;
-      //   margin-top: 1rem;
-
-
-      //   &>input{
-      //     margin-top: 5px;
-      //     margin-left: 10px;
-      //   }
-
-      //   &>button{
-      //     margin-left: 5rem;
-      //   }
-
-      // }
-    // }
-  }
-
-  &>div:nth-child(2){
-    @include size(100%,70vh);
-    margin-left: 2rem;
-    
-    &>span{
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    &>div:nth-child(2){
-      position: relative;
-      @include size(100%,60%);
-      @include flexSet(space-around,flex-start,column);
-      margin-left: 2rem;
-
-      &>div:nth-child(1){
-        
-        &>span{
-          font-size: 0.5rem;
-        }
-      }
-
-      &>div:nth-child(2){
-
-        &>input{
-          @include size(600px,30px);
-        }
-      }
-
-      &>div:nth-child(3){
-
-        &>input{
-          @include size(600px,30px);
-        }
-      }
-
-      &>div:nth-child(4){
-
-        &>input{
-          @include size(600px,30px);
-        }
-      }
-
-      &>div:nth-child(5){
-        @include size(800px,50px);
-        @include flexSet(center,center,row);
-
-        &>button:nth-child(1){
-          @include size(70px,30px);
-          background-color: $col-2;
-          border-radius: 10%;
-          border: none;
-        }
-
-        &>button:nth-child(2){
-          @include size(70px,30px);
-          background-color: $col-3;
-          border-radius: 10%;
-          border: none;
-          margin-left: 2rem;
-        }
-      }
-
-      &>div:nth-child(6){
-        position: absolute;
-        left:10rem;
-        @include size(500px,450px);
-        @include flexSet(space-evenly,center,column);
-        background-color: $col-4;
-        visibility:hidden;
-        
-
-        &>span{
+        @include size(20%,100%);
+        margin-top: 4rem;
+  
+        &>p{
           text-align: center;
-          font-size: 2rem;
-        }
-
-        &>button:nth-child(2){
-          @include size(250px,70px);
-        }
-
-        &>button:nth-child(3){
-          @include size(250px,70px);
         }
       }
-
+  
+      &>div:nth-child(2){
+        @include size(auto,auto);
+        @include flexSet(center,flex-start,column);
+        // margin-top: -5rem;
+  
+  
+        &>div:nth-child(1){
+          @include flexSet(center,flex-end,row);
+  
+          &>div{
+            @include size(150px,150px);
+          // @include flexSet(center,center,row);
+            background-image: url(./ph_user-circle-fill.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+          }
+          // 프로필 기본 이미지 
+          
+          &>button{
+            @include size(20px,20px);
+            margin-left: 1rem;
+          }
+        }
+        
+  
+        &>div:nth-child(2){
+  
+          @include size(400px,30px);
+          @include flexSet(space-around,center,row);
+          background-color:$col-2;
+          margin-top: 1rem;
+  
+          &>form{
+            @include size(80%,100%);
+            // margin-left: 2rem;
+            margin-top: 0.5rem;
+          }
+  
+        }
+  
+      }
+  
+      // &>form{
+      //   @include size(80%,100%);
+      //   margin-left: 2rem;
+      //   margin-top: 2rem;
+  
+        // &>div:nth-child(1){
+          
+        //   &>img{
+        //     @include size(100px,100px);
+        //     visibility: hidden;
+        //     object-fit: contain;
+          
+        //     background-repeat: no-repeat;
+        //   }
+  
+        // }
+  
+  
+        // &>div:nth-child(2){
+        //   @include size(400px,30px);
+        //   background-color:$col-2;
+        //   margin-top: 1rem;
+  
+  
+        //   &>input{
+        //     margin-top: 5px;
+        //     margin-left: 10px;
+        //   }
+  
+        //   &>button{
+        //     margin-left: 5rem;
+        //   }
+  
+        // }
+      // }
     }
-
-    
-
+  
+    &>div:nth-child(2){
+      @include size(100%,70vh);
+      margin-left: 2rem;
+      
+      &>span{
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+  
+      &>div:nth-child(2){
+        position: relative;
+        @include size(100%,60%);
+        @include flexSet(space-around,flex-start,column);
+        margin-left: 2rem;
+  
+        &>div:nth-child(1){
+          
+          &>span{
+            font-size: 0.5rem;
+          }
+        }
+  
+        &>div:nth-child(2){
+  
+          &>input{
+            @include size(600px,30px);
+          }
+        }
+  
+        &>div:nth-child(3){
+  
+          &>input{
+            @include size(600px,30px);
+          }
+        }
+  
+        &>div:nth-child(4){
+  
+          &>input{
+            @include size(600px,30px);
+          }
+        }
+  
+        &>div:nth-child(5){
+          @include size(800px,50px);
+          @include flexSet(center,center,row);
+  
+          &>button:nth-child(1){
+            @include size(70px,30px);
+            background-color: $col-2;
+            border-radius: 10%;
+            border: none;
+          }
+  
+          &>button:nth-child(2){
+            @include size(70px,30px);
+            background-color: $col-3;
+            border-radius: 10%;
+            border: none;
+            margin-left: 2rem;
+          }
+        }
+  
+        &>div:nth-child(6){
+          position: absolute;
+          left:10rem;
+          @include size(500px,450px);
+          @include flexSet(space-evenly,center,column);
+          background-color: $col-4;
+          visibility:hidden;
+          
+  
+          &>span{
+            text-align: center;
+            font-size: 2rem;
+          }
+  
+          &>button:nth-child(2){
+            @include size(250px,70px);
+          }
+  
+          &>button:nth-child(3){
+            @include size(250px,70px);
+          }
+        }
+  
+      }
+  
+  
+    }
+  
   }
-
 }

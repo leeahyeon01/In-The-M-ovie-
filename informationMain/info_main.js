@@ -1,27 +1,226 @@
-// const root = document.getElementById('root');
-// const password = document.getElementById('password');
-// const psConfirm = document.getElementById('psConfirm');
-// const nickname = document.getElementById('nickname');
-// const submit = document.getElementById('submit');
-// const button = document.getElementById('button');
 
-const tag={
-  root:document.getElementById('root'),
-  fileLabel:document.getElementById('lbFile'),
-  fileInput: document.getElementById('file'),
-  saveButton:document.getElementById('saveButton'),
-  IDLabe:document.getElementById('lbID'),
-  password:document.getElementById('password'),
-  psConfirm:document.getElementById('psConfirm'),
-  nickname:document.getElementById('nickname'),
-  modify:document.getElementById('modify'),
-  withdraw:document.getElementById('withdraw'),
+const app = document.getElementById("app");
+const main = document.createElement("main");
+app.appendChild(main);
+// ------------------------- app > main --------------------------------
 
-  modal:document.getElementById('modal'),
-  mButton1:document.getElementById('mButton1'),
-  mButton2:document.getElementById('mButton2')
+function element(tagName){
+  if(typeof(tagName)==="string"){
+    return `<${tagName}></${tagName}>`;
+  }
 }
-// ------------태그들 객체로 묶음--------------------------
+
+main.innerHTML = `
+  ${element("div")}
+  ${element("div")}
+  `;
+
+// -------------------------------- app > main > div*2 -----------------------
+
+const div1 = document.querySelector('#app>main>div:nth-child(1)');
+
+div1.innerHTML = `
+  ${element("div")}
+  ${element('div')}
+`;
+// --------------------- app > main >  div:nth-child(1) > div*2 ----------------
+
+const profileImgTextDiv = div1.children[0];
+const profileImgP = document.createElement('p');
+profileImgTextDiv.appendChild(profileImgP);
+console.log(profileImgP);
+// -------------- app > main > div:nth-child(1) > div:nth-child(1) > p ----------
+
+const profileImgDiv = div1.children[1];
+const fileSelectDiv = document.createElement('div');
+profileImgDiv.appendChild(fileSelectDiv);
+
+fileSelectDiv.innerHTML = `
+  ${element("div")}
+  ${element("button")}
+`;
+
+const imageShowDiv = fileSelectDiv.children[0];
+imageShowDiv.setAttribute("id", "image-show");
+
+const deleButton = fileSelectDiv.children[1];
+deleButton.setAttribute("id", "delete");
+deleButton.setAttribute("type", "button");
+
+// -------------------app > main > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div id="image-show", button id = "delete"------------------
+
+const imgUploadDiv = document.createElement('div');
+profileImgDiv.appendChild(imgUploadDiv);
+imgUploadDiv.setAttribute("id", "img-upload");
+
+// --------------- app > main > div:nth-child(1) > div:nth-child(2) > div id = "img-upload" --------------------------------
+
+const form = document.createElement('form');
+imgUploadDiv.appendChild(form);
+form.setAttribute("method", "post");
+form.setAttribute("enctype", "multipart/form-data");
+
+const formChildDiv = document.createElement("div");
+form.appendChild(formChildDiv);
+
+const lbFile = document.createElement("label");
+formChildDiv.appendChild(lbFile);
+lbFile.setAttribute("for", "file");
+lbFile.setAttribute("id", "lbFile");
+
+const fileInput = document.createElement('input');
+formChildDiv.appendChild(fileInput);
+fileInput.setAttribute("type", "file");
+fileInput.setAttribute("id", "file");
+fileInput.setAttribute("name", "file");
+fileInput.setAttribute("accept", "image/*");
+
+// ------------------------- app > main > div:nth-child(1) > div:nth-child(2) > div id = "img-upload" > form > div > label, input -------------------
+
+const saveButton = document.createElement("button");
+imgUploadDiv.appendChild(saveButton);
+saveButton.setAttribute("id", "saveButton");
+saveButton.setAttribute("title", "첨부파일 삭제");
+saveButton.innerHTML = "저장";
+
+// ------------------------- app > main > div:nth-child(1) > div:nth-child(2) > div id = "img-upload" > form, button----------------------
+
+// 여기까지 프로필 이미지 부분 ↑↑
+
+// 이제부터 프로필 수정 부분 ↓↓
+
+const div2 = main.children[1];
+
+div2.innerHTML = `
+  ${element("span")}
+  ${element("div")}
+`;
+
+const span = div2.children[0];
+span.innerHTML = "프로필 수정";
+
+// -------------------- app > main > div:nth-child(2) > span ------------------
+
+const profileChangeDiv = div2.children[1];
+
+function tagMaker (parentElement, itemName, itemCount){
+  for(let i = 0; i<itemCount; i++){
+    let item = document.createElement(itemName);
+    parentElement.appendChild(item);
+  }
+}
+
+tagMaker(profileChangeDiv, "div", 6);
+
+// ------------------ app > main > div:nth-child(2) > div > div*6 -------------
+
+const idDiv = profileChangeDiv.children[0];
+
+const IDLabel = document.createElement("label");
+idDiv.appendChild(IDLabel);
+IDLabel.setAttribute("for", "lbID");
+IDLabel.setAttribute("id", "lbID");
+IDLabel.innerHTML = "아이디";
+
+const idSpan = document.createElement("span");
+idDiv.appendChild(idSpan);
+idSpan.innerHTML = "현재 아이디(변경불가)";
+
+// ---------- app > main > div:nth-child(2) > div > div(1) > label, span--------
+
+const passwordDiv = profileChangeDiv.children[1];
+
+const passwordLable = document.createElement("label");
+passwordDiv.appendChild(passwordLable);
+passwordLable.setAttribute("for", "lbPassword");
+passwordLable.setAttribute("id", "lbPassword");
+passwordLable.innerHTML = "비밀번호 변경";
+
+const passwordInput = document.createElement("input");
+passwordDiv.appendChild(passwordInput);
+passwordInput.setAttribute("type", "password");
+passwordInput.setAttribute("id", "password");
+passwordInput.setAttribute("name", "infoPassword");
+passwordInput.setAttribute("minlength", 5);
+passwordInput.setAttribute("maxlength", 16);
+
+// ---------- app > main > div:nth-child(2) > div > div(2) > label, input-------
+
+const psConfirmDiv = profileChangeDiv.children[2];
+
+const confirmLabel = document.createElement("label");
+psConfirmDiv.appendChild(confirmLabel);
+confirmLabel.setAttribute("for", "lbConfirm");
+confirmLabel.setAttribute("id", "lbConfirm");
+confirmLabel.innerHTML = "비밀번호 확인";
+
+const confirmInput = document.createElement("input");
+psConfirmDiv.appendChild(confirmInput);
+confirmInput.setAttribute("type", "password");
+confirmInput.setAttribute("id", "psConfirm");
+confirmInput.setAttribute("name", "infoPsConfirm");
+
+//------------app > main > div:nth-child(2) > div > div(3) > label, input------- 
+
+const nickNameDiv = profileChangeDiv.children[3];
+
+const nickNameLabel = document.createElement("label");
+nickNameDiv.appendChild(nickNameLabel);
+nickNameLabel.setAttribute("for", "lbNickName");
+nickNameLabel.setAttribute("id", "lbNickName");
+nickNameLabel.innerHTML = "닉네임";
+
+const nickNameInput = document.createElement("input");
+nickNameDiv.appendChild(nickNameInput);
+nickNameInput.setAttribute("type", "nickname");
+nickNameInput.setAttribute("id", "nickname");
+nickNameInput.setAttribute("name", "user_nickname");
+nickNameInput.setAttribute("placeholder", "현재 닉네임(변경가능");
+
+//---------- app > main > div:nth-child(2) > div > div(4) > label, input --------
+
+const modifyDiv = profileChangeDiv.children[4];
+
+const modifyButton = document.createElement("button");
+modifyDiv.appendChild(modifyButton);
+modifyButton.setAttribute("type", "submit");
+modifyButton.setAttribute("id", "modify");
+modifyButton.innerHTML = "수정하기";
+
+const withdrawButton = document.createElement("button");
+modifyDiv.appendChild(withdrawButton);
+withdrawButton.setAttribute("type", "button");
+withdrawButton.setAttribute("id", "withdraw");
+withdrawButton.innerHTML = "탈퇴하기";
+
+//----------- app > main > div:nth-child(2) > div > div(5) > button *2 ---------
+
+const modalDiv = profileChangeDiv.children[5];
+
+const modalSpan = document.createElement("span");
+modalDiv.appendChild(modalSpan);
+modalSpan.innerHTML = "정말 탈퇴 하시겠습니까?";
+
+const modalButton1 = document.createElement("button");
+modalDiv.appendChild(modalButton1);
+modalButton1.setAttribute("type", "submit");
+modalButton1.setAttribute("id", "mButton");
+modalButton1.innerHTML = "확인";
+
+const modalButton2 = document.createElement("button");
+modalDiv.appendChild(modalButton2);
+modalButton2.setAttribute("type", "submit");
+modalButton2.setAttribute("id", "mButton2");
+modalButton2.innerHTML = "취소";
+
+//-------- app > main > div:nth-child(2) > div > div(6) > span, button*2 -------
+// 모달 화면
+
+
+
+
+// 여기부터는 자바스크립트 기능 구현 ↓↓
+
 
 const save = document.getElementById('saveButton');
 save.onclick = showImage;
@@ -84,7 +283,7 @@ function deleteimage(){
 //   let container = document.getElementById('image-show');
 //   container.appendChild(obj);
 // }
-// 아니 뭐 객체를 배열로 바꾸고 배열초기화하고 다시 객체로 바꾸고 이딴거 필요 없었네 
+//아니 뭐 객체를 배열로 바꾸고 배열초기화하고 다시 객체로 바꾸고 이딴거 필요 없었네 
 
 
 
@@ -105,11 +304,11 @@ function deleteimage(){
 
 
 
-const psConfirm = tag.psConfirm;
-psConfirm.onclick = minLength;
+confirmInput.onclick = minLength;
 
 function minLength(){
-  const psValue = tag.password.value;
+  // const psValue = tag.password.value;
+  const psValue = passwordInput.value;
   let regPass = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{5,}$/;
   // /^[a-zA-Z0-9].*[!,@,^,*,%,#,&,_,~];
   // /^(?=.*[a-zA-Z0-9])(?=.*[!,@,^,*,%,#,&,_,~])(?=.[0-9])/;
@@ -135,12 +334,14 @@ function minLength(){
 //---------------------비밀번호 유효성 검사--------------------------
 
 
-const modify = tag.modify;
-modify.onclick = password;
+// const modify = tag.modify;
+modifyButton.onclick = password;
 
 function password(){
-  const pass1 = tag.password.value;
-  const pass2 = tag.psConfirm.value;
+  // const pass1 = tag.password.value;
+  const pass1 = passwordInput.value;
+  // const pass2 = tag.psConfirm.value;
+  const pass2 = confirmInput.value;
   if(pass1 !== pass2){
     alert("비밀번호가 일치하지 않습니다");
     return false;
@@ -152,13 +353,13 @@ function password(){
 
 
 function init(){
-  tag.withdraw.addEventListener('click', function(){
-    tag.modal.style.visibility="visible";
+  withdrawButton.addEventListener('click', function(){
+    modalDiv.style.visibility="visible";
   });
-  tag.mButton2.addEventListener('click', function(){
-    tag.modal.style.visibility="hidden";
+  modalButton2.addEventListener('click', function(){
+    modalDiv.style.visibility="hidden";
   });
 }
 init();
-// --------------------------모달 함수-----------------------------
+//--------------------------모달 함수-----------------------------
 

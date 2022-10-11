@@ -10,7 +10,11 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }    
+    }
+    main>div:nth-of-type(1)>div:hover {
+      background-color: rgba(214, 214, 214, 1);
+      color: black;  
+    }
   </style>
 </head>
 <body>
@@ -19,14 +23,12 @@
     const root = document.getElementById('root');
     root.innerHTML = "<div id='indexDiv'></div>";
     const indexDiv = root.children[0];
-    indexDiv.innerHTML = "<img/> <header></header> <main></main>";
+    indexDiv.innerHTML = "<img/> <header></header> <main></main> <footer> 여기는 푸터 </footer>";
     indexDiv.style.width = '99vw';
     const bg_img = indexDiv.children[0];
     const header = indexDiv.children[1];
     const main = indexDiv.children[2];
-    //console.log(main);
-    main.innerHTML= "<section></section>";
-    const section = main.children[0];
+    const footer = indexDiv.children[3];
 
     bg_img.src = "./source/img/bg_dpimg.png";
     bg_img.style.width = '100%';
@@ -38,17 +40,112 @@
     header.style.backgroundColor = 'rgba(45, 45, 45, 0.5)';
     header.style.display = "flex";
     header.style.flexDirection = "row-reverse";
-    header.style.flexWrap = "nowrap";    
+    header.style.flexWrap = "nowrap";  
     header.style.alignContent = "center";
     header.style.justifyContent = "flex-start";
-    header.style.alignItems = "center";    
+    header.style.alignItems = "center";   
     //header.style.linearGradient = '(90deg, #303030 0%, rgba(48, 48, 48, 0.5) 70.83%, rgba(48, 48, 48, 0) 100%)';
     header.style.color = 'rgba(214, 214, 214, 1)';
     header.innerHTML = '<div></div>';
-    const menuDiv = header.children[0];
-    menuDiv.innerText = "검색 로그인 게시판";
 
+    const menuDiv = header.children[0];
+    menuDiv.innerHTML = "<div>검색</div> <div>로그인</div> <div>게시판</div>";
+    menuDiv.style.width = '50%';
+    menuDiv.style.display = 'flex';
+    menuDiv.style.flexDirection = 'row';
+    menuDiv.style.flexWrap = 'nowrap';
+    menuDiv.style.justifyContent = 'space-evenly';
+    menuDiv.style.alignItems = 'center';
+    menuDiv.style.alignContent = 'center';
+    const searchDiv = menuDiv.children[0];
+    const signDiv = menuDiv.children[1];
+    const boardDiv = menuDiv.children[2];
+    //menuDiv.innerText = "검색 로그인 게시판";
+
+    //console.log(main);
+    main.innerHTML= "<div></div><section></section>";    
+    const randomDiv =  main.children[0];
+    const section = main.children[1];
     main.style.width = '100%';
+    main.style.display = 'flex';
+
+    randomDiv.style.width = '30%';
+    randomDiv.style.color = 'rgba(214, 214, 214, 1)';
+    randomDiv.style.display = 'flex';
+    randomDiv.style.flexDirection = 'column';
+    randomDiv.style.flexWrap = 'wrap';
+    randomDiv.style.alignContent = 'center';
+    randomDiv.style.justifyContent = 'space-evenly';
+    randomDiv.style.alignItems = 'center';
+
+    
+    const ranBtnArr = [];
+     ranBtnArr.push(`<div id="genre-1"></div>`);
+     ranBtnArr.push(`<div id="genre-2"></div>`);
+     ranBtnArr.push(`<div id="genre-3"></div>`);
+     ranBtnArr.push(`<div id="genre-4"></div>`);
+     ranBtnArr.push(`<div id="genre-5"></div>`);
+     ranBtnArr.push(`<div id="genre-6"></div>`);
+     ranBtnArr.push(`<div id="genre-7"></div>`);
+     ranBtnArr.push(`<div id="genre-8"></div>`);
+     ranBtnArr.push(`<div id="genre-9"></div>`);
+     ranBtnArr.push(`<div id="genre-10"></div>`);
+
+     randomDiv.innerHTML = ranBtnArr.join('');
+
+     for(let i = 0; i < randomDiv.children.length; i++) {
+      randomDiv.children[i].innerHTML = '<div>장르</div>'
+      randomDiv.children[i].style.width = "8vw";
+      randomDiv.children[i].style.height = "2vw";
+      randomDiv.children[i].style.display = 'flex';    
+      randomDiv.children[i].style.flexDirection = 'row';
+      randomDiv.children[i].style.flexWrap = 'nowrap';
+      randomDiv.children[i].style.alignContent = 'center';
+      randomDiv.children[i].style.justifyContent = 'center';
+      randomDiv.children[i].style.alignItems = 'center';
+      randomDiv.children[i].style.border = '1px solid rgba(214, 214, 214, 1)';
+      randomDiv.children[i].style.borderRadius = '27px';      
+     }
+    
+
+    section.style.width = '70%';
+    section.style.display = 'flex';
+    section.style.flexDirection = 'row';
+    section.style.flexWrap = 'nowrap';
+    section.style.alignContent = 'center';
+    section.style.justifyContent = 'center';
+    section.style.alignItems = 'center';
+    section.innerHTML = "<div></div> <div></div>";
+
+    const explDiv = section.children[0];
+    explDiv.innerHTML = "<div>설명구간</div>"
+    explDiv.style.width = "50%"
+    explDiv.style.height = '100%';
+    explDiv.style.position = 'absolute';
+    explDiv.style.backgroundColor = 'black';    
+    explDiv.style.opacity = '0.4';
+    explDiv.style.display = 'none';
+
+    const vodDiv = section.children[1];
+    vodDiv.innerHTML = '<video autoplay controls loop muted></video>';   
+    const mainVod = vodDiv.children[0];
+    mainVod.src = "./source/vod/tekken8.mp4";
+    console.dir(mainVod);
+    //mainVod.autoplay = false;
+    
+    vodDiv.style.width = '70%';
+    mainVod.style.width = '100%';
+
+    mainVod.addEventListener('mouseover', (event)=>{
+      mainVod.pause();      
+      explDiv.style.display = 'flex';
+    });
+    mainVod.addEventListener('mouseout', (event)=>{
+      mainVod.play();
+      explDiv.style.display = 'none';
+    });
+
+    //section.style.linearGradinet
 
     //console.dir(root);
     //console.dir(indexDiv);
@@ -57,6 +154,12 @@
       this.tagName = tagName;
       this.content = content;      
     }
+
+
+    footer.style.width = '100%';
+    footer.style.height = '10vh';
+    footer.style.backgroundColor = 'rgba(45, 45, 45, 0.5)';
+    footer.style.color = 'rgba(214, 214, 214, 1)';
     
     //indexDiv.style.backgroundColor = 'red';
     //indexDiv.style.backgroundImage = 'url("./source/img/bg_dpimg.png")';

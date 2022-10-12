@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./moveSlide.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script>
+      let root = window.document.body.children[0];
+
+      let slide_box_list = [];
+      let movieAPI = [
+        "공조",
+        "한산",
+        "선물",
+        "마더",
+        "기생충",
+        "해리포터",
+        "도둑들",
+        "햄토리",
+        "원피스",
+        "공조2",
+      ];
+
+      for (let i = 0; i < movieAPI.length; i++) {
+        slide_box_list.push(`<div>${movieAPI[i]}</div>`);
+      }
+
+      //tenlist
+      slide_box_list.unshift("<div>");
+      slide_box_list.push("</div>");
+      //화살표
+      slide_box_list.push("<span>&lang;</span>");
+      slide_box_list.push("<span>&rang;</span>");
+      //slideBox
+      slide_box_list.unshift("<div>");
+      slide_box_list.push("</div>");
+
+      root.innerHTML = slide_box_list.join("");
+
+      //슬라이드 감싸는 박스
+      let slideBox = root.children[0];
+      slideBox.id = "slideBox";
+      console.dir(slideBox);
+      slideBox.style.border = "solid 2px black";
+
+      // top10을 감싸는 박스
+      let tenlist = slideBox.children[0];
+      tenlist.id = "tenlist";
+      console.dir(tenlist);
+
+      //* TOP10영화
+      let tenMovie;
+      for (let i = 0; i < movieAPI.length; i++) {
+        let tenMovie = tenlist.children[i];
+        tenMovie.style.border = "solid 2px black";
+        tenMovie.style.width = "400px";
+        tenMovie.style.height = "350px";
+        tenMovie.style.margin = "5px";
+      }
+
+      //화살표
+      let leftArrow = slideBox.children[1];
+      let rigArrow = slideBox.children[2];
+      console.dir(rigArrow);
+      console.dir(leftArrow);
+      leftArrow.className = "prev arrow";
+      rigArrow.className = "next arrow";
+
+      //슬라이드 이동
+      let currentIdx = 0;
+      function moveslide(num) {
+        tenlist.style.transform = `translateX(${num * 3.5 * 3.5}%)`;
+      }
+
+      leftArrow.addEventListener("click", function () {
+        console.log("pren");
+        moveslide(currentIdx - 1);
+        currentIdx--;
+      });
+
+      rigArrow.addEventListener("click", function () {
+        console.log("pren");
+        moveslide(currentIdx + 1);
+        currentIdx++;
+      });
+    </script>
+  </body>
+</html>

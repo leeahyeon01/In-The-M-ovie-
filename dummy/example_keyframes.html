@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @keyframes go-left-right {
+        /* 애니메이션 이름 지정: "go-left-right" */
+        from {
+          left: 0px;
+        } /* left 0px 부터 애니메이션 시작 */
+        to {
+          left: calc(100% - 50px);
+        } /* left 값이 100%-50px 될 때까지 애니메이션 적용 */
+      }
+
+      .progress {
+        animation: go-left-right 3s infinite alternate;
+        /* 해당 요소에 커스텀 애니메이션 'go-left-right' 적용
+       지속 시간은 3초,
+       반복 횟수는 무한(infinite)
+       방향은 매번 바뀜
+    */
+
+        position: relative;
+        border: 2px solid green;
+        width: 50px;
+        height: 20px;
+        background: lime;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress"></div>
+  </body>
+</html>

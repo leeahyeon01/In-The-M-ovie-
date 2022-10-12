@@ -1,0 +1,62 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+#slideBox {
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes go-left-right {
+  /* 애니메이션 이름 지정: "go-left-right" */
+  from {
+    left: -250px;
+  } /* left 0px 부터 애니메이션 시작 */
+  to {
+    left: 50px;
+  } /* left 값이 100%-50px 될 때까지 애니메이션 적용 */
+}
+
+#tenlist {
+  width: 110vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  border: solid 1px red;
+
+  animation: go-left-right 7s infinite reverse;
+}
+
+.arrow {
+  position: absolute;
+  background-color: transparent;
+  color: black;
+  text-align: center;
+  border-radius: 50%;
+  padding: 10px 20px;
+  top: 43%;
+  font-size: 5em;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  background-color: rgba(128, 128, 128, 0.11);
+  animation-play-state: paused;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}

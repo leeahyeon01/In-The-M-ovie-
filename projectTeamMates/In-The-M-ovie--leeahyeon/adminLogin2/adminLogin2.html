@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>  
+    <link rel="stylesheet" href="./adminLogin2.css">
+</head>
+<body>
+    <div id="root"></div> 
+
+    <script>
+ let root = document.getElementById("root");
+     console.dir(root)  
+
+ let write = [];
+   
+     write.push('<div>adminlogin</div>')   
+    
+      function writeBox(tagname){  
+         if(typeof(tagname) === "string"){ 
+        write.push( `<${tagname}>`)
+         } 
+         `</${tagname}>`
+        }
+        writeBox("div")
+     writeBox("form")
+  
+     writeBox("label")
+     writeBox("input")
+     writeBox("input")     
+
+-
+write.push('<div><div>아이디찾기/비밀번호 찾기</div>')   
+write.push('<div>회원가입</div></div>')    
+
+
+write.push(`<button> 로그인 </button>`) 
+write.push(`</div>`)
+write.unshift('<div>')
+root.innerHTML = write.join(" ");
+
+let main = root.children[0];  
+ 
+     main.className = "main"  
+let login = main.children[0];   
+login.className = "login"; 
+let maindiv = main.children[1];
+console.dir(maindiv); 
+maindiv.className = "maindiv"
+let form = maindiv.children[0];    
+form.className ="form"
+
+console.dir(form);
+let loginbtn =form[2];  
+loginbtn.className = "loginbtn"
+
+console.dir(loginbtn)
+let label = form.childNodes[1];  
+label.className ="label";
+console.dir(label)
+
+let divparent = label.children[2]; 
+divparent.className ="divparent";
+let writetag = root.getElementsByTagName("input") 
+writetag.className = "writetag"
+    </script>
+</body>
+</html>

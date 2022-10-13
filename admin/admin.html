@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +13,7 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     html {
       scroll-behavior: smooth;
     }
@@ -26,747 +26,242 @@
     }
     a:visited {
       text-decoration: none;
-    }    
-
-    #admin {
-      width: 99vw;
-      height: auto;
-      display: flex;
-    }
-
-    aside {
-      width: 14vw;
-      height: 100vw;
-      background-color: rgba(26, 26, 26, 1);
-      color: white;
-      position: fixed;
-    }
-
-    aside>div:nth-of-type(1) {
-      width: 100%;
-      height: 21vh;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-content: center;
-      justify-content: center;
-      align-items: center;
-    }
-
-    aside>div:nth-of-type(1)>img {
-      width: 95%;
-    }
-
-    main {
-      width: 85vw;
-    }
-
-    main > section {
-      width: 99vw;
-      height: 100vh;
-    }
-
-
-    #addUser:hover,
-    #upDatUser:hover,
-    #upMedia:hover,
-    #mngBoard:hover,
-    #statVsitor:hover {
-      cursor: pointer;
-      text-decoration: underline;
-      font-weight: bold;
-      background-color: coral;
-    }
-
-    #targetAddUser,
-    #targetUpDatUser,
-    #targetUpMedia,
-    #targetMngBoard,
-    #targetStatVisior {
-      width: 100%;
-      height: 100%;
-    }
-
-    #targetAddUser {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      align-content: center;
-      align-items: center;
-      justify-content: flex-start;
-    }
-
-    #targetUpDatUser {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      align-content: center;
-      justify-content: flex-start;
-      align-items: center;
-    }
-
-    #searchDiv {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-content: center;
-      justify-content: space-evenly;
-      align-items: center;
-    }
-
-    #targetUpMedia {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      align-content: center;
-      justify-content: flex-start;
-      align-items: center;
-    }
-
-    #targetUpMedia>div:nth-of-type(2)>div:nth-of-type(1) {
-      height: 24vw;
-    }
-
-    #targetUpMedia>div:nth-of-type(2)>div:nth-of-type(2) {
-      display: flex;
-    }
-
-    #targetMngBoard {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      align-content: center;
-      justify-content: flex-start;
-      align-items: center;
-    }
-
-    #boardList {
-      width: 30vw;
-      height: 30vh;
-    }
-
-    #boardListName {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-content: center;
-      align-items: center;
-      flex-wrap: nowrap;
-    }
-
-    .boardListContent {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-content: center;
-      align-items: center;
-      flex-wrap: nowrap;
-    }
-
-
-    #targetStatVisior {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      align-content: center;
-      justify-content: flex-start;
-      align-items: center;
-    }
-
-    #listDiv {
-      width: 50vw;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
-      align-content: center;
-      justify-content: center;
-    }
-
-    #listNameDiv {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-content: center;
-      justify-content: space-evenly;
-      align-items: center;
-    }
-
-    .rowDiv {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      align-content: center;
-      justify-content: space-evenly;
-      align-items: center;
-    }
-
-    #menuClient>div:nth-of-type(1),
-    #menuContent>div:nth-of-type(1),
-    #menuStat>div:nth-of-type(1) {
-      font-family: 'Inter', sans-serif;
-      color: white;
-      background-color: rgba(61, 66, 190, 1);
-      font-size: 150%;
-      text-align: center;
-    }
-
-    #menuClient>div:nth-of-type(1):hover,
-    #menuContent>div:nth-of-type(1):hover,
-    #menuStat>div:nth-of-type(1):hover {
-      cursor: pointer;
-      font-weight: bold;
-      background-color: red;
-    }
+    }   
   </style>
 </head>
-
 <body>
-  <div id="root">
-    <div id="admin">
-      <aside>
-        <div>
-          <img src="./img/admin-icon02.png" alt="관리자 아이콘">
-        </div>
-
-        <div id="menuDiv">
-          <div id="menuClient">
-            <div>회원 관리</div>
-            <div>
-              <a href="#one"><div id="addUser" class="clickDiv" data-divdat="1" >º회원추가</div></a>
-              <a href="#two"><div id="upDatUser" class="clickDiv" data-divdat="2" >º조회, 수정, 삭제</div></a>
-            </div>
-          </div>
-        
-          <div id="menuContent">
-            <div> 컨텐츠 관리</div>
-            <div>
-              <a href="#three"><div id="upMedia" class="clickDiv" data-divdat="3"> º메인 화면 관리 </div></a>
-              <a href="#four"><div id="mngBoard" class="clickDiv" data-divdat="4"> º게시판 관리</div></a>
-            </div>
-          </div>
-        
-          <div id="menuStat">
-            <div> 통계</div>
-            <div>
-              <a href="#five"><div id="statVsitor" class="clickDiv" data-divdat="5"> º방문자 통계</div></a>
-            </div>
-          </div>
-        </div>
-      </aside>
-
-      <main>
-        <section data-sectdat="1" id="one">
-          <form action="#" method="post">
-            <div id="targetAddUser">
-              <div> 회원추가 </div>
-              <div>
-                <div>
-                  <div>닉네임</div>
-                  <div>
-                    <input type="text" name="nickName" id="nickName" placeholder="닉네임">
-                  </div>
-                </div>
-                <div>
-                  <input type="button" value="중복 체크" name="checkDupl" id="checkdupl">
-                </div>
-                <div>
-                  <div>이메일</div>
-                  <div>
-                    <input type="text" name="email" id="email" placeholder="이메일"> @
-                    <input type="text" name="domain" id="domain">
-                    <select name="eaddr" id="eaddr">
-                      <option value="naver.com">네이버</option>
-                      <option value="gmail.com">구글</option>
-                      <option value="hanmail.net">다음</option>
-                      <option value="kakao.com">카카오</option>
-                      <option value="">직접입력</option>
-                    </select>
-                    <input type="button" value="중복 체크" name="checkDupl">
-                  </div>
-                </div>
-                <div>
-                  <div>비번</div>
-                  <div>
-                    <input type="password" name="pwd" id="pwd">
-                  </div>
-                </div>
-                <div>
-                  <div>비번확인</div>
-                  <div>
-                    <input type="password" name="pwdCheck" id="pwdCheck">
-                  </div>
-                </div>
-                <div>
-                  <div>가입하기</div>
-                  <div>
-                    <input type="submit" value="가입하기">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </section>
-
-        <section data-sectdat="2" id="two">
-          <form action="" method="post">
-            <div id="targetUpDatUser">
-              <div>조회수정삭제</div>
-
-              <div>
-                <div>
-                  <div>회원 리스트</div>
-
-                  <div id="listDiv">
-
-                    <div id="listNameDiv">
-                      <div>
-                        <div>번 호</div>
-                      </div>
-                      <div>
-                        <div> 닉 네 임 </div>
-                      </div>
-                      <div>
-                        <div> 이 메 일 </div>
-                      </div>
-                      <div>
-                        <div>회원정보 수정 º 삭제</div>
-                      </div>
-                    </div>
-
-                    <div id="listContentDiv">
-                      <div class="rowDiv">
-                        <div>1</div>
-                        <div>닉네임1</div>
-                        <div>이메일1</div>
-                        <div>
-                          <input type="button" value="수정하기">
-                          <input type="button" value="삭제하기">
-                        </div>
-                      </div>
-
-                      <div class="rowDiv">
-                        <div>2</div>
-                        <div>닉네임2</div>
-                        <div>이메일2</div>
-                        <div>
-                          <input type="button" value="수정하기">
-                          <input type="button" value="삭제하기">
-                        </div>
-                      </div>
-
-                      <div class="rowDiv">
-                        <div>3</div>
-                        <div>닉네임3</div>
-                        <div>이메일3</div>
-                        <div>
-                          <input type="button" value="수정하기">
-                          <input type="button" value="삭제하기">
-                        </div>
-                      </div>
-
-                      <div class="rowDiv">
-                        <div>4</div>
-                        <div>닉네임4</div>
-                        <div>이메일4</div>
-                        <div>
-                          <input type="button" value="수정하기">
-                          <input type="button" value="삭제하기">
-                        </div>
-                      </div>
-
-                      <div class="rowDiv">
-                        <div>5</div>
-                        <div>닉네임5</div>
-                        <div>이메일5</div>
-                        <div>
-                          <input type="button" value="수정하기">
-                          <input type="button" value="삭제하기">
-                        </div>
-                      </div>
-                    </div>
-
-                    <div id="searchDiv">
-                      <div>회원목록 조회</div>
-                      <div>
-                        <select name="찾는 방법" id="selectOption">
-                          <option value="nickNm">닉네임</option>
-                          <option value="eMail">이메일</option>
-                        </select>
-                        <input type="text" placeholder="검색할 닉네임이나 이메일을 입력해 주세요">
-                        <input type="button" value="검색하기">
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </section>
-
-
-        <section data-sectdat="3" id="three">
-          <div id="targetUpMedia">
-            <div>메인화면 관리</div>
-
-            <div>
-              <div>
-                <img src="./img/upMedia.png" alt="">
-                <div>영상을 드래그해서 해당 공간에 넣어주세요!</div>
-              </div>
-
-              <div>
-                <div><input type="file" value="파일 업로드"></div>
-                <div><input type="button" value="동영상 편집"></div>
-                <div><input type="button" value="동영상 미리보기"></div>
-                <div><input type="submit" value="업로드 하기"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section data-sectdat="4" id="four">
-          <div id="targetMngBoard">
-
-            <div> 게시판 관리 </div>
-
-            <div id="boardList">
-              <div id="boardListName">
-                <div>인 덱 스</div>
-                <div>제 목</div>
-                <div>게 시 판 타입</div>
-                <div>작 성 자(닉네임)</div>
-                <div>기 능</div>
-              </div>
-
-              <div class="boardListContent">
-                <div>인덱스</div>
-                <div>제목</div>
-                <div>자게, 공지, QA</div>
-                <div>이름</div>
-                <div>
-                  <button>게시물 관리</button>
-                  <button>수정</button>
-                  <button>삭제</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section data-sectdat="5" id="five">
-          <div id="targetStatVisior">
-            <div>방문자 통계</div>
-            <div>
-              <div>
-                <div>방문자 추이</div>
-                <div>
-                  <img src="./img/visiors_graph.png" alt="이거슨 그래프를 가장한 이미지">
-                </div>
-              </div>
-              <div>
-                <div>새로 쓴 게시물</div>
-                <div>
-                  <img src="./img/board.png" alt="이거슨 통계를 가장한 이미지">
-                </div>
-              </div>
-              <div>
-                <div>추천</div>
-                <div>
-                  <img src="./img/good.png" alt="이거슨 통계를 가장한 이미지">
-                </div>
-              </div>
-              <div>
-                <div>조회</div>
-                <div>
-                  <img src="./img/click.png" alt="이거슨 통계를 가장한 이미지">
-                </div>
-              </div>
-              <div>
-                <div>방문자 수</div>
-                <div>
-                  <img src="./img/views.png" alt="이거슨 통계를 가장한 이미지">
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      </main>
-    </div>
-  </div>
-
+  <div id="root"></div>
   <script>
-    const root = document.getElementById('root');
+    const root = document.getElementById('root');   
+
     console.dir(root);
-    const aside = root.children[0].children[0];
-    const main = root.children[0].children[1];
-    const clickDiv = document.getElementsByClassName('clickDiv');
-    const menuDiv = document.getElementById('menuDiv');
-    //console.dir(main);
-    // console.log(typeof clickDiv);
-    // console.log(clickDiv);
-
-    // console.log(menuDiv);
-    // console.dir(menuDiv);
-    // console.log(menuDiv.children[0].children[1].children[0].dataset);
     
-    menuDiv.addEventListener('click', (event) => {
-        //console.dir(event);
-        //console.log(event.path);
-        //console.log(event.path[5]);
-        //console.log(event.path[5].children[1].children);
-        //console.dir(event.target);
-        //console.log(event.target.dataset);
-        let datasetValue = event.target.dataset.divdat;
-        if (datasetValue !== undefined) {
-          //console.log(datasetValue);
-          for (let i = 0; i < clickDiv.length; i++) {
-            if (clickDiv[i].dataset.divdat !== datasetValue) {
-              clickDiv[i].style.color = "white";
-              clickDiv[i].style.fontWeight = "";
-            }
-          }  
-          // for(let i = 0; i< main.children.length; i++) {
-          //   //console.log(i);
-          //   //console.log(main.children[i].dataset.sectdat);
-          //   if(main.children[i].dataset.sectdat === datasetValue) {
-          //     main.children[i].style.display = "flex";
-            // } //else {
-            //   main.children[i].style.display = "none";
-            // }
-            
-            // if(main.children[i].dataset.sectdat !== datasetValue) {
-            //   //console.log(main.children[i].dataset.sectdat);
-            //   main.children[i].style.display = "none";
-            // }
-         // }       
-          event.target.style.color = "coral";
-          event.target.style.fontWeight = "bold";
-        }
-      });
 
-      window.addEventListener('hashchange', ()=>{
-        const urlHash = window.location.href;
-        let getValue = urlHash.substring(urlHash.indexOf("#")+1, urlHash.length);
-      });
-
-    // for(let i=0; i<clickDiv.length; i++) {
-    //   console.log(clickDiv[i].dataset.divdat);
-    //   clickDiv[i].addEventListener('click', (event)=> {
-    //     //console.log('a');
-    //     //console.log(event);
-    //     //console.log(event.target);
-    //     //console.dir(event.target);
-    //     console.log(event.target.dataset.divdat);
-    //     //console.dir(clickDiv[i].dataset.divdat);
-    //     //console.log(event.target.dataset);
-    //   });
-    // }
-
-    // clickDiv.addEventListener('click', (event)=>{
-    //   console.log('a');
-    //   console.log(event.target);
-    //   console.dir(event.target.dataset);
-    // });
-
-    // let sectValue = main.children.dataset.sect;
-    // console.log(sectValue);
-    // let divValue = clickDiv.dataset.div;
-    // console.log(divValue);
-
-  // for (let i = 0; i < clickDiv.length; i++) {
-  //   let datasetValue = clickDiv[i].dataset;
-  //   //console.log(`datasetValue = ${datasetValue}`);
-  //   console.dir(datasetValue);
-  //   clickDiv[i].addEventListener('click', (event) => {
-  //     //console.log(event);
-  //     //console.dir(event.target.dataset);
-  //     if (datasetValue === event.target.dataset) {
-  //       console.log("a");
-  //     }
-  //     if (datasetValue !== event.target.dataset) {
-  //       console.log("b");
-  //     }
-  //   });
-  // }
-
-    // for(let i =0; i < clickDiv.length; i++) {      
-    //   main.children[i].style.display = "none";
-    //   clickDiv[i].style.fontWeight = "";
-    //   clickDiv[i].style.color = "white";
-
-
-    //   clickDiv[i].addEventListener('click', (event)=>{
-    //     //console.log(main.children[i].dataset);
-    //     //console.log(clickDiv[i].dataset);
-    //     //console.log(event)
-
-    //     clickDiv[i].style.fontWeight = "bold";
-    //     clickDiv[i].style.color = "red";
-    //     main.children[i].style.display = "flex";
-
-    //   });
-    // }
-
-    const addUser = document.getElementById('addUser');
-    const upDatUser = document.getElementById('upDatUser');
-    const upMedia = document.getElementById('upMedia');
-    const mngBoard = document.getElementById('mngBoard');
-    const statVsitor = document.getElementById('statVsitor');
-
-    const targetAddUser = document.getElementById('targetAddUser');
-    const targetUpDatUser = document.getElementById('targetUpDatUser');
-    const targetUpMedia = document.getElementById('targetUpMedia');
-    const targetMngBoard = document.getElementById('targetMngBoard');
-    const targetStatVisior = document.getElementById('targetStatVisior');
-
-    const menuClient = document.getElementById('menuClient');
-    const menuContent = document.getElementById('menuContent');
-    const menuStat = document.getElementById('menuStat');
-
-    menuClient.children[1].style.height = "0";
-    menuClient.children[1].style.overflow = "hidden";
-
-    menuContent.children[1].style.height = "0";
-    menuContent.children[1].style.overflow = "hidden";
-
-    menuStat.children[1].style.height = "0";
-    menuStat.children[1].style.overflow = "hidden";
-
-    let clToggle = true, conToggle = true, statToggle = true;
-    let countCl = 0, countCon = 0, countStat = 0;
-
-    const framerate = 120 / 1000;
-
-    function dropDownEvent(targetDiv, toggle, count) {
-      targetDiv.children[0].addEventListener('click', () => {
-        if (toggle) {
-          let dropDown = setInterval(() => {
-            targetDiv.children[1].style.height = `${count++}px`;
-            if (count > 60) {
-              clearInterval(dropDown);
-              toggle = !toggle;
-            }
-          }, framerate);
+    const tagMaker = (container, tagName, content, dataset) => {
+      this.tagName = tagName;
+      this.content = content;      
+      let tagArr = [];
+      if (Array.isArray(tagName) === false) {
+        if(dataset !== undefined) {
+          tagArr.push(`<${tagName} ${dataset}>${content}</${tagName}>`);
         } else {
-          let dropUp = setInterval(() => {
-            targetDiv.children[1].style.height = `${count--}px`;
-            toggle = !toggle;
-            if (count < 0) {
-              clearInterval(dropUp);
-              toggle = !toggle;
-            }
-          }, framerate);
+          tagArr.push(`<${tagName}>${content}</${tagName}>`);
         }
-      });
+        container.innerHTML = tagArr.join('');
+      } else {
+        for (let i = 0; i < tagName.length; i++) {
+          if(dataset !== undefined) {
+            tagArr.push(`<${tagName[i]} ${dataset}>${content}</${tagName[i]}>`);
+        } else {
+          tagArr.push(`<${tagName[i]}>${content}</${tagName[i]}>`);
+        }
+          
+        }
+        container.innerHTML = tagArr.join('');
+      }
     }
 
-    dropDownEvent(menuClient, clToggle, countCl);
-    dropDownEvent(menuContent, conToggle, countCon);
-    dropDownEvent(menuStat, statToggle, countStat);
+    const doubleDiv = ['div', 'div'];
+    const tripleDiv = ['div', 'div', 'div'];
+    const quadraDiv = ['div', 'div', 'div', 'div'];
+    const pentaDiv = ['div', 'div', 'div', 'div', 'div'];
+    const hexaDiv = ['div', 'div', 'div', 'div', 'div', 'div'];
 
-    // addUser.addEventListener('click', (event) => {
-    //   targetAddUser.style.display = "flex";
-    //   targetUpDatUser.style.display = "none";
-    //   targetMngBoard.style.display = "none";
-    //   targetStatVisior.style.display = "none";
-    //   targetUpMedia.style.display = "none";
+    tagMaker(root, 'div', '', '');
+    const adminDiv = root.children[0];
+    const adminChildren = ['aside', 'main'];
+    tagMaker(adminDiv, adminChildren, '');
 
-    //   addUser.style.fontWeight = "bold";
-    //   upDatUser.style.fontWeight = "";
-    //   mngBoard.style.fontWeight = "";
-    //   upMedia.style.fontWeight = "";
-    //   statVsitor.style.fontWeight = "";
+    const aside = adminDiv.children[0];
 
-    //   addUser.style.color = "red";
-    //   upDatUser.style.color = "white";
-    //   mngBoard.style.color = "white";
-    //   upMedia.style.color = "white";
-    //   statVsitor.style.color = "white";
-    // });
+    const main = adminDiv.children[1];
+    
+    tagMaker(aside, doubleDiv, '<img/>');
 
-    // upDatUser.addEventListener('click', (event) => {
-    //   targetAddUser.style.display = "none";
-    //   targetUpDatUser.style.display = "flex";
-    //   targetMngBoard.style.display = "none";
-    //   targetStatVisior.style.display = "none";
-    //   targetUpMedia.style.display = "none";
+    const adminIconDiv = aside.children[0];    
+    const adminImg = adminIconDiv.children[0];
+    adminImg.src = "./img/admin-icon02.png";
+    adminImg.alt = "관리자 아이콘 얼마든지 바뀔 수 있음"
 
-    //   addUser.style.fontWeight = "";
-    //   upDatUser.style.fontWeight = "bold";
-    //   mngBoard.style.fontWeight = "";
-    //   upMedia.style.fontWeight = "";
-    //   statVsitor.style.fontWeight = "";
+    const menuDiv = aside.children[1];    
+    tagMaker(menuDiv, tripleDiv, '');
 
-    //   addUser.style.color = "white";
-    //   upDatUser.style.color = "red";
-    //   mngBoard.style.color = "white";
-    //   upMedia.style.color = "white";
-    //   statVsitor.style.color = "white";
-    // });
+    const menuClient = menuDiv.children[0];
+    const menuContent = menuDiv.children[1];
+    const menuStat = menuDiv.children[2];
+    
 
-    // mngBoard.addEventListener('click', (event) => {
-    //   targetAddUser.style.display = "none";
-    //   targetUpDatUser.style.display = "none";
-    //   targetMngBoard.style.display = "flex";
-    //   targetStatVisior.style.display = "none";
-    //   targetUpMedia.style.display = "none";
+    tagMaker(menuClient, doubleDiv, '');
+    const menuClNameDiv = menuClient.children[0];
+    menuClNameDiv.textContent = '회원관리';
 
-    //   addUser.style.fontWeight = "";
-    //   upDatUser.style.fontWeight = "";
-    //   mngBoard.style.fontWeight = "bold";
-    //   upMedia.style.fontWeight = "";
-    //   statVsitor.style.fontWeight = "";
+    const menuClList = menuClient.children[1];    
+    const anchorChildren = ['a', 'a'];
 
-    //   addUser.style.color = "white";
-    //   upDatUser.style.color = "white";
-    //   mngBoard.style.color = "red";
-    //   upMedia.style.color = "white";
-    //   statVsitor.style.color = "white";
-    // });
+    tagMaker(menuClList, anchorChildren, '<div class="clickDiv" data-divdat=""></div>');
+    menuClList.children[0].href = '#one';
+    menuClList.children[1].href = '#two';    
+    const addUser = menuClList.children[0].children[0];
+    console.dir(addUser);    
+    addUser.dataset.divdat = "1";
+    addUser.textContent = '●회원추가'
+    const upDatUser = menuClList.children[1].children[0];
+    upDatUser.dataset.divdat = "2";
+    upDatUser.textContent = '●조회, 수정, 삭제'
 
-    // upMedia.addEventListener('click', (event) => {
-    //   targetAddUser.style.display = "none";
-    //   targetUpDatUser.style.display = "none";
-    //   targetMngBoard.style.display = "none";
-    //   targetStatVisior.style.display = "none";
-    //   targetUpMedia.style.display = "flex";
+    tagMaker(menuContent, doubleDiv, ' ');
+    const menuConNameDiv = menuContent.children[0];
+    menuConNameDiv.textContent = '컨텐츠 관리';
 
-    //   addUser.style.fontWeight = "";
-    //   upDatUser.style.fontWeight = "";
-    //   mngBoard.style.fontWeight = "";
-    //   upMedia.style.fontWeight = "bold";
-    //   statVsitor.style.fontWeight = "";
+    const menuConList  = menuContent.children[1];
 
-    //   addUser.style.color = "white";
-    //   upDatUser.style.color = "white";
-    //   mngBoard.style.color = "white";
-    //   upMedia.style.color = "red";
-    //   statVsitor.style.color = "white";
-    // });
+    tagMaker(menuConList, anchorChildren, '<div class="clickDiv" data-divdat=""></div>');
+    menuConList.children[0].href = '#three';
+    menuConList.children[1].href = '#four';    
+    const upMedia = menuConList.children[0].children[0];    
+    upMedia.dataset.divdat = "3";
+    upMedia.textContent = '●메인 화면 '
+    const mngBoard = menuConList.children[1].children[0];
+    mngBoard.dataset.divdat = "4";
+    mngBoard.textContent = '●게시판 관리';
 
-    // statVsitor.addEventListener('click', (event) => {
-    //   targetAddUser.style.display = "none";
-    //   targetUpDatUser.style.display = "none";
-    //   targetMngBoard.style.display = "none";
-    //   targetStatVisior.style.display = "flex";
-    //   targetUpMedia.style.display = "none";
+    tagMaker(menuStat, doubleDiv, ' ');
+    const menuStatNameDiv = menuStat.children[0];
+    menuStatNameDiv.textContent = '통계 관리';
 
-    //   addUser.style.fontWeight = "";
-    //   upDatUser.style.fontWeight = "";
-    //   mngBoard.style.fontWeight = "";
-    //   upMedia.style.fontWeight = "";
-    //   statVsitor.style.fontWeight = "bold";
+    const menuStatList  = menuStat.children[1];
 
-    //   addUser.style.color = "white";
-    //   upDatUser.style.color = "white";
-    //   mngBoard.style.color = "white";
-    //   upMedia.style.color = "white";
-    //   statVsitor.style.color = "red";
-    // });
-   
+
+    tagMaker(menuStatList, 'a', '<div class="clickDiv" data-divdat=""></div>');
+    menuStatList.children[0].href = '#five';    
+    const statVisitor = menuStatList.children[0].children[0]; 
+    statVisitor.dataset.divdat = "5";
+    statVisitor.textContent = '●방문자 통계';
+
+
+    
+
+    const mainChildren = ['section', 'section', 'section', 'section', 'section'];
+    tagMaker(main, mainChildren, '<form><div></div></form>', 'data-sectdat');
+    console.dir(main);
+
+    for(let i = 0; i < main.children.length; i++) {
+      main.children[i].dataset.divdat = i + 1;
+      const targetDiv = main.children[i].children[0].children[0];      
+      tagMaker(targetDiv, doubleDiv, '');
+    }
+
+    const sectOne = main.children[0];    
+    const sectTwo = main.children[1];  
+    const sectThree = main.children[2];
+    const sectFour = main.children[3];
+    const sectFive = main.children[4];    
+
+    const formOne = sectOne.children[0];
+    formOne.id = 'formOne';
+    const formTwo = sectTwo.children[0];
+    formTwo.id = 'formTwo';
+    const formThree = sectThree.children[0];
+    formThree.id = 'formOne';
+    const formFour = sectFour.children[0];
+    formFour.id = 'formFour';
+    const formFive = sectFive.children[0];
+    formFive.id = 'formFive';
+
+    const targetAddUser = formOne.children[0];
+    const targetUpDatUser = formTwo.children[0];
+    const targetUpMedia = formThree.children[0];
+    const targetMngBoard = formFour.children[0];
+    const targetStatVisitor = formFive.children[0];
+
+    const targetAUNameDiv = targetAddUser.children[0];
+    targetAUNameDiv.textContent = '회원추가';
+    const targetUDUNameDiv = targetUpDatUser.children[0];
+    const targetUMNameDiv = targetUpMedia.children[0];
+    const targetMBNameDiv = targetMngBoard.children[0];
+    const targetSVNameDiv = targetStatVisitor.children[0];
+
+    const targetAUListDiv = targetAddUser.children[1];
+    const targetUDUListDiv = targetUpDatUser.children[1];
+    const targetUMListDiv = targetUpMedia.children[1];
+    const targetMBListDiv = targetMngBoard.children[1];
+    const targetSVListDiv = targetStatVisitor.children[1];
+    
+    tagMaker(targetAUListDiv, hexaDiv, '');
+    const AUListOneDiv = targetAUListDiv.children[0];
+    const AUListTwoDiv = targetAUListDiv.children[1];
+    const AUListThreeDiv = targetAUListDiv.children[2];
+    const AUListFourDiv = targetAUListDiv.children[3];
+    const AUListFiveDiv = targetAUListDiv.children[4];
+    const AUListSixDiv = targetAUListDiv.children[5];
+    
+    tagMaker(AUListOneDiv, doubleDiv, '');
+    AUListOneDiv.children[0].textContent = '닉네임';
+    tagMaker(AUListOneDiv.children[1], 'input', '');
+    const nickInput = AUListOneDiv.children[1].children[0];
+    nickInput.type = 'text';
+    nickInput.name = 'nickName';
+    nickInput.id = 'nickName';
+    nickInput.placeholder = '닉네임을 입력해 주세요.';
+
+    
+    tagMaker(AUListTwoDiv, 'button', '중복 체크');
+    const checkDupl = AUListTwoDiv.children[0];    
+    checkDupl.value = '중복 체크';
+    checkDupl.name = 'checkDupl';
+    checkDupl.id = "checkDupl";
+    //console.dir(checkDupl);
+
+    tagMaker(AUListThreeDiv, doubleDiv, '');
+    AUListThreeDiv.children[0].textContent = '이메일';
+    const emailContent = ['input', 'input', 'select', 'button'];
+    tagMaker(AUListThreeDiv.children[0], emailContent, '');
+    const emailName = AUListThreeDiv.children[0].children[0];
+    emailName.type = 'text';
+    emailName.name = 'email';
+    emailName.id = 'emailName';
+    emailName.placeholder = '이메일';
+
+    const emailDomain = AUListThreeDiv.children[0].children[1];
+    emailName.type = 'text';
+    emailName.name = 'emailDomain';
+    emailName.id = 'emailDoamin';
+    
+    const selectDomain = AUListThreeDiv.children[0].children[2];
+    selectDomain.innerHTML = '<option value="naver.com">네이버</option><option value="gmail.com">구글</option><option value="hanmail.net">다음</option><option value="kakao.com">카카오</option><option value="">직접입력</option>';
+
+    const emailCheckDupl = AUListThreeDiv.children[0].children[2];
+    emailCheckDupl.textContent = '중복체크';
+    emailCheckDupl.value = '중복체크';
+    emailCheckDupl.name = 'emailCheckDupl';
+
+    for(let i = 0; i < targetAUListDiv.children.length; i++) {      
+      if(i === 0 || i === 1 || i === 2) {
+        continue;
+      } else {
+        tagMaker(targetAUListDiv.children[i], doubleDiv, '');
+      }
+    }
+    targetAUListDiv.children[3].children[0].textContent = '비번';
+    tagMaker(targetAUListDiv.children[3].children[1], 'input', '', );
+    const passwd = targetAUListDiv.children[3].children[1].children[0];    
+    passwd.type = 'password';
+    passwd.name = 'passwd';
+    passwd.id = 'passwd';
+
+    targetAUListDiv.children[4].children[0].textContent = '비번 확인';
+    tagMaker(targetAUListDiv.children[4].children[1], 'input', '', 'type="password"');
+    const passCheck = targetAUListDiv.children[4].children[1].children[0];
+    passCheck.type = 'password';
+    passCheck.name = 'passCheck';
+    passCheck.id = 'passCheck';
+
+    targetAUListDiv.children[5].children[0].textContent = '가입하기';
+    tagMaker(targetAUListDiv.children[5].children[1], 'button', '가입하기');
+    const btnSigUp = targetAUListDiv.children[5].children[1].children[0];
+    btnSigUp.type = 'submit';
+    btnSigUp.name = 'btnSigUp';
+    btnSigUp.id = 'btnSigUp';
   </script>
 </body>
-
 </html>

@@ -32,18 +32,36 @@
 <body>
   <div id="root"></div>
   <script>
-    const root = document.getElementById('root');   
-
+    const root = document.getElementById('root');
     console.dir(root);
     
+    const tagMaking = (container, tagName, tagCount, attri, content) => {
+      let tagArr = [];
+      if(attr !== undefined || attr === '') {
+        for(let i = 0; i<tagCount; i++) {
+          tagArr.push(`<${tagName} ${attri}>${content}</${tagName}>`);
+        }
+      } else {
+        for(let i = 0; i< tagCount; i++) {
+          tagArr.push(`<${tagName}>${content}</${tagName}>`);
+        }
+      }
+      container.innerHTML = tagArr.join('');
+    }
 
-    const tagMaker = (container, tagName, content, dataset) => {
+    const childrenMaker = (tagName, attr, count) => {
+      let tagArr = [];
+      tagArr.push(`<${tagName} ${attr}></${tagName}>`);
+      return tagArr;
+    }
+
+    const tagMaker = (container, tagName, content, tagElement, dataset) => {
       this.tagName = tagName;
       this.content = content;      
       let tagArr = [];
       if (Array.isArray(tagName) === false) {
         if(dataset !== undefined) {
-          tagArr.push(`<${tagName} ${dataset}>${content}</${tagName}>`);
+          tagArr.push(`<${tagName} ${tagElement}>${content}</${tagName}>`);
         } else {
           tagArr.push(`<${tagName}>${content}</${tagName}>`);
         }
@@ -51,7 +69,7 @@
       } else {
         for (let i = 0; i < tagName.length; i++) {
           if(dataset !== undefined) {
-            tagArr.push(`<${tagName[i]} ${dataset}>${content}</${tagName[i]}>`);
+            tagArr.push(`<${tagName[i]} ${tagElement}>${content}</${tagName[i]}>`);
         } else {
           tagArr.push(`<${tagName[i]}>${content}</${tagName[i]}>`);
         }
@@ -60,6 +78,27 @@
         container.innerHTML = tagArr.join('');
       }
     }
+    
+    
+
+    class tagCreator {
+      constructor(tagName, attri, content) {
+        this.tagName = tagName;
+        this.attri = attri;
+        this.content = content;
+      }
+    }
+
+    const creDiv = new tagCreator('div', '','');
+    const creAside = new tagCreator('aside', '', '');
+    const creMain = new tagCreator('main', '', '');
+    const creImg = new tagCreator('img', '', '');
+    const creSect = new tagCreator('section', 'dataset', '');
+    const creA = new tagCreator('a', '', '');
+    const creSlct = new tagCreator('select', '', '');
+    const creOpt = new tagCreator('option', '', '');
+    const creForm = new tagCreator('form', '', '');
+
 
     const doubleDiv = ['div', 'div'];
     const tripleDiv = ['div', 'div', 'div'];

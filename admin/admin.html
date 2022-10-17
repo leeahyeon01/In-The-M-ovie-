@@ -87,12 +87,24 @@
       let tagArr = [];
       if(Array.isArray(tagName) === false) {
         for(let i = 0; i < count; i++) {
-          tagArr.push(`<${tagName} ${attri}>${content}</${tagName}>`);
+          if(Array.isArray(content) === false) {
+            tagArr.push(`<${tagName} ${attri}>${content}</${tagName}>`);
+          } else {
+            for(let ii = 0; ii < content.length; ii++) {
+              tagArr.push(`<${tagName} ${attri}>${content[ii]}</${tagName}>`);
+            }
+          }          
         }
       } else {
         for (let i = 0; i < tagName.length; i++) {
           for (let ii = 0; ii < count; ii++) {
-            tagArr.push(`<${tagName[i]} ${attri}>${content}</${tagName[i]}>`);
+            if(Array.isArray(content) === false) {
+              tagArr.push(`<${tagName[i]} ${attri}>${content}</${tagName[i]}>`);
+            } else {
+              for(let e = 0; e < content.length; e++) {
+                tagArr.push(`<${tagName[i]} ${attri}>${content[e]}</${tagName[i]}>`);
+              }
+            }            
           }
         }
       }
@@ -140,7 +152,7 @@
     //statList.children[0].href = '#five';
 
     const clickDiv = document.getElementsByClassName('clickDiv');
-    console.log(Array.isArray(clickDiv));
+    //console.log(Array.isArray(clickDiv));
     for(let i = 0; i < clickDiv.length; i++) {
       console.dir(clickDiv[i]);
       switch(i) {
@@ -367,12 +379,46 @@
 
         case 1: 
         targetTag.type = "text";
-        targetTag.placeholder="검색할 닉네임이나 이메일을 입력해 주세요"
+        targetTag.placeholder="검색할 닉네임이나 이메일을 입력해 주세요.";
         break;
 
         case 2: 
         targetTag.value = "검색하기";
         targetTag.textContent = "검색하기";
+        break;        
+      }
+    }
+
+    console.dir(targetUpMedia);
+    tagMaker(targetUpMedia.children[1], creDiv.tagName, 2, '', '');
+    for(let i = 0; i < targetUpMedia.children[1].children.length; i++) {
+      const targetContainer = targetUpMedia.children[1].children[i];
+      switch(i) {
+        case 0: 
+          const tagArr = [creImg.tagName, creDiv.tagName];
+          for(let ii = 0; ii < tagArr.length; ii++) {
+            tagMaker(targetContainer, tagArr, 1, '');
+            targetContainer.children[0].src = './img/upMedia.png';
+            targetContainer.children[1].textContent = '영상을 드래그해서 해당 공간에 넣어주세요!';          
+          }
+        break;
+
+        case 1:
+          const inputArr = [creInput.tagName, creBtn.tagName, creBtn.tagName, creBtn.tagName];
+          const conteArr = [];
+          tagMaker(targetContainer, creDiv.tagName, 4, childMaker(inputArr, 1, '', ''), '');
+          targetContainer.children[0].children[0].type = 'file';
+          targetContainer.children[0].children[0].value = '파일 업로드';
+
+          targetContainer.children[0].children[1].textContent = '동영상 편집';
+          targetContainer.children[0].children[1].value = '동영상 편집';
+
+          targetContainer.children[0].children[2].textContent = '동영상 미리보기';
+          targetContainer.children[0].children[2].value = '동영상 미리보기';
+
+          targetContainer.children[0].children[3].textContent = '업로드 하기';          
+          targetContainer.children[0].children[3].value = '업로드 하기';
+          targetContainer.children[0].children[3].type = 'submit';
       }
     }
 

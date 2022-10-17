@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #box {
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+      display: flex;
+    }
+
+    div {
+      width: 50px;
+      height: 50px;
+      border: solid 1px palevioletred;
+    }
+
+    button {
+      width: 50px;
+      height: 50px;
+
+      border: solid 1px black;
+    }
+  </style>
+  <body>
+    <div id="box">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <button id="prev">prev</button>
+    <span id="next">next</span>
+    <script>
+      let box = document.getElementById("box");
+      let prev = document.getElementById("prev");
+      let next = document.getElementById("next");
+
+      let currentIdx = 0;
+      box.style.transform = `translateX(0.5%)`;
+
+      function moveslide(num) {
+        box.style.transform = ;
+      }
+
+      prev.addEventListener("click", function () {
+        box.style.transition = "ease .5s";
+        moveslide(currentIdx + 1);
+        currentIdx++;
+      });
+    </script>
+  </body>
+</html>

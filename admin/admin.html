@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: aliceblue;
+    }
+    a:link {
+      text-decoration: none;
+    }
+    a:visited {
+      text-decoration: none;
+    }   
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById('root');
+    console.dir(root);
+
+    class tagCreator {
+      constructor(tagName, attri, content) {
+        this.tagName = tagName;
+        this.attri = attri;
+        this.content = content;
+      }
+    }
+
+    const creDiv = new tagCreator('div', '','');
+    const creAside = new tagCreator('aside', '', '');
+    const creMain = new tagCreator('main', '', '');
+    const creImg = new tagCreator('img', '', '');
+    const creSect = new tagCreator('section', 'dataset', '');
+    const creA = new tagCreator('a', '', '');
+    const creSlct = new tagCreator('select', '', '');
+    const creOpt = new tagCreator('option', '', '');
+    const creForm = new tagCreator('form', '', '');
+    const creInput = new tagCreator('input', '', '');
+    const creBtn = new tagCreator('button', '', '');
+    
+    const tagMaker = (container, tagName, tagCount, content, attri) => {
+        let tagArr = [];
+        if (Array.isArray(tagName) === false) {
+          if (attri !== undefined) {
+            for (let i = 0; i < tagCount; i++) {
+              tagArr.push(`<${tagName} ${attri}>${content}</${tagName}>`);
+            }
+          } else {
+            for (let i = 0; i < tagCount; i++) {
+              tagArr.push(`<${tagName}>${content}</${tagName}>`);
+            }
+          }          
+        } else {
+          for (let i = 0; i < tagName.length; i++) {
+            if (attri !== undefined) {
+              for (let ii = 0; ii < tagCount; ii++) {
+                tagArr.push(`<${tagName[i]} ${attri}>${content}</${tagName[i]}>`);
+              }
+            } else {
+              for (let ii = 0; ii < tagCount; ii++) {
+                tagArr.push(`<${tagName[i]}>${content}</${tagName[i]}>`);
+              }
+            }
+          }          
+        }
+        container.innerHTML = tagArr.join('');
+      }
+
+    const childMaker = (tagName, count, attri, content) => {
+      let tagArr = [];
+      if(Array.isArray(tagName) === false) {
+        for(let i = 0; i < count; i++) {
+          tagArr.push(`<${tagName} ${attri}>${content}</${tagName}>`);
+        }
+      } else {
+        for (let i = 0; i < tagName.length; i++) {
+          for (let ii = 0; ii < count; ii++) {
+            tagArr.push(`<${tagName[i]} ${attri}>${content}</${tagName[i]}>`);
+          }
+        }
+      }
+      return tagArr.join('');
+    }
+    // tagMaker(root, creDiv.tagName, 1, childrenMaker(creDiv.tagName, 1,''));
+    // console.log(childrenMaker(creDiv.tagName, 1,''));
+
+    const asideMain = [creAside.tagName, creMain.tagName];
+
+    tagMaker(root, creDiv.tagName, 1, childMaker(asideMain, 1, '',''));
+    const adminDiv = root.children[0];
+    const aside = adminDiv.children[0];
+    const main = adminDiv.children[1];
+
+    tagMaker(aside, creDiv.tagName, 2, '');
+    tagMaker(aside.children[0], creImg.tagName, 1, '', 'src = "./img/admin-icon02.png" alt="관리자 아이콘"');
+
+    const menuDiv = aside.children[1];
+
+    tagMaker(menuDiv, creDiv.tagName, 3, childMaker(creDiv.tagName, 2, '',''));
+
+    const menuClient = menuDiv.children[0];
+    menuClient.children[0].textContent = '회원 관리';
+    const menuList = menuClient.children[1];
+    tagMaker(menuList, creA.tagName, 2, childMaker(creDiv.tagName, 1, 'class="clickDiv"', ''), 'href=""');
+    //menuList.children[0].href = '#one';
+    //menuList.children[1].href = '#two';
+    
+    const menuContent = menuDiv.children[1];
+
+    menuContent.children[0].textContent = '컨텐츠 관리';
+    const contentList = menuContent.children[1];
+    tagMaker(contentList, creA.tagName, 2, childMaker(creDiv.tagName, 1, 'class="clickDiv"', ''), 'href=""','');
+    //contentList.children[0].href = '#three';
+    //contentList.children[1].href = '#four';
+    
+    
+
+    const menuStat = menuDiv.children[2];
+
+    menuStat.children[0].textContent = '통 계';
+    const statList = menuStat.children[1];
+    tagMaker(statList, creA.tagName, 1, childMaker(creDiv.tagName, 1, 'class="clickDiv"', ''), 'href=""','');
+    //statList.children[0].href = '#five';
+
+    const clickDiv = document.getElementsByClassName('clickDiv');
+    console.log(Array.isArray(clickDiv));
+    for(let i = 0; i < clickDiv.length; i++) {
+      console.dir(clickDiv[i]);
+      switch(i) {
+        case 0:
+          clickDiv[i].textContent = " ●회원 추가 ";
+          clickDiv[i].dataset.datadat = '1';
+          clickDiv[i].parentElement.attributes[0].value = "#one";
+        break;
+        
+        case 1:
+          clickDiv[i].textContent = " ●조회, 수정, 삭제 ";
+          clickDiv[i].dataset.datadat = '2';
+          clickDiv[i].parentElement.attributes[0].value = "#two";
+        break;
+
+        case 2:
+          clickDiv[i].textContent = " ●게시판 관리 ";
+          clickDiv[i].dataset.datadat = '4';
+          clickDiv[i].parentElement.attributes[0].value = "#four";
+        break;
+
+        case 3: 
+           clickDiv[i].textContent = " ●게시판 관리 ";
+           clickDiv[i].dataset.datadat = '4';
+           clickDiv[i].parentElement.attributes[0].value = "#four";
+        break;
+
+        case 4:
+         clickDiv[i].textContent = " ●방문자 통계 관리 ";
+         clickDiv[i].dataset.datadat = '5';
+         clickDiv[i].parentElement.attributes[0].value = "#five";          
+        break;
+      }
+    }
+
+    tagMaker(main, creSect.tagName, 5, childMaker(creForm.tagName, 1,'action="#" method="post"', '<div><div></div><div></div></div>'), 'data-sectdat');
+
+    for(let i = 0; i < main.children.length; i++) {
+      main.children[i].dataset.sectdat = [i + 1];
+    }
+
+    const targetAddUser = main.children[0].children[0].children[0];
+    const targetUpDatUser = main.children[1].children[0].children[0];
+    const targetUpMedia = main.children[2].children[0].children[0];
+    const targetMngBoard = main.children[3].children[0].children[0];
+    const targetStatVisitor = main.children[4].children[0].children[0];
+
+    for(let i = 0; i < main.children.length; i++) {
+      const targetContainer =  main.children[i].children[0].children[0].children[1];
+      tagMaker(targetContainer, creDiv.tagName, 2, '', '');
+      
+      switch(i) {        
+        case 0: 
+        targetAddUser.children[0].textContent = '회원 추가';
+        break;
+
+        case 1: 
+        targetUpDatUser.children[0].textContent = '조회 수정 삭제';
+        break;
+
+        case 2: 
+        targetUpMedia.children[0].textContent = '메인 화면 관리';
+        break;
+
+        case 3: 
+        targetMngBoard.children[0].textContent = '게시판 관리'; 
+
+        case 4: 
+        targetStatVisitor.children[0].textContent = '방문자 통계';
+      }
+    }
+
+    
+    tagMaker(targetAddUser.children[1], creDiv.tagName , 5, childMaker(creDiv.tagName, 2, '',''));
+
+
+    const setNickDiv = targetAddUser.children[1].children[0];    
+    setNickDiv.children[0].textContent = '닉네임';
+    const inputArr = [creInput.tagName, creBtn.tagName];
+    tagMaker(setNickDiv.children[1], inputArr, 1, '');
+    for(let i = 0;  i < setNickDiv.children[1].children.length; i++) {
+      switch(i) {
+        case 0:
+          setNickDiv.children[1].children[i].type = 'text';
+          setNickDiv.children[1].children[i].name = 'nickName';
+          setNickDiv.children[1].children[i].id = 'nickName';
+          setNickDiv.children[1].children[i].placeholder = '닉네임을 입력해 주세여.';
+        break;
+
+        case 1:
+          setNickDiv.children[1].children[i].value = '중복체크';
+          setNickDiv.children[1].children[i].name = 'chckDupl';
+          setNickDiv.children[1].children[i].id = 'chckDupl';
+          setNickDiv.children[1].children[i].textContent = '중복 체크 버튼';
+        break;
+      } 
+    }
+
+    const setEmailDiv = targetAddUser.children[1].children[1];
+    for(let i = 0; i< setEmailDiv.children.length; i++) {
+      switch(i) {
+        case 0:
+          setEmailDiv.children[i].textContent = '이 메 일';
+        break;
+        case 1:
+          const tagArr = [];
+          tagArr.push(creInput.tagName);
+          tagArr.push(creInput.tagName);
+          tagArr.push(creSlct.tagName);
+          tagArr.push(creInput.tagName)
+          tagMaker(setEmailDiv.children[i], tagArr, 1, '');
+          tagMaker(setEmailDiv.children[i].children[2], creOpt.tagName, 5, '', 'value=""');            
+        break;
+      }
+    }
+    const eAddrSel = setEmailDiv.children[1].children[2];
+    console.dir(eAddrSel);  
+    for(let i = 0; i < eAddrSel.children.length; i++) {
+      switch(i) {
+        case 0: 
+        eAddrSel.children[i].value = 'naver.com';
+        eAddrSel.children[i].textContent = '네이버';
+        break;
+
+        case 1:
+        eAddrSel.children[i].value = 'gmail.com';
+        eAddrSel.children[i].textContent = '구글';
+        break;
+
+        case 2:
+        eAddrSel.children[i].value = 'kakako.com';
+        eAddrSel.children[i].textContent = '카카오';
+        break;
+
+        case 3:
+        eAddrSel.children[i].value = 'hanmail.net';
+        eAddrSel.children[i].textContent = '다음(구 한메일)';
+        break;
+
+        case 4:
+        eAddrSel.children[i].value = '';
+        eAddrSel.children[i].textContent = '직접입력';
+        break;
+      }
+    }
+
+    const setPassDiv = targetAddUser.children[1].children[2];
+    const setPassCKDiv = targetAddUser.children[1].children[3];
+    const setSignUpDiv = targetAddUser.children[1].children[4];
+    for(let i = 0; i < setPassDiv.children.length; i++) {
+      switch(i) {
+        case 0: 
+        setPassDiv.children[i].textContent = '비밀번호';
+        setPassCKDiv.children[i].textContent = '비밀번호 확인';
+        setSignUpDiv.children[i].textContent = '새로운 회원 만들기';
+        break;
+        
+        case 1: 
+        tagMaker(setPassDiv.children[i], creInput.tagName, 1, '', 'type="password" name="passwd" id="passwd"');
+        tagMaker(setPassCKDiv.children[i], creInput.tagName, 1, '', 'type="password" name="passwdDup" id="passwdDup"');
+        tagMaker(setSignUpDiv.children[i], creBtn.tagName, 1, '신규회원만들기', 'type="submit" name="가입하기" value="가입하기" id="signUp"');
+        break;
+      }
+    }
+
+    tagMaker(targetUpDatUser.children[1], creDiv.tagName, 1, childMaker(creDiv.tagName, 2, '', ''));
+
+    for(let i = 0; i < 2; i++) {
+      const targetContainer = targetUpDatUser.children[1].children[0].children[i];
+      const textArr = ['번 호', '닉 네 임', '이 메 일', '회원정보 수정 º 삭제'];
+      switch(i) {
+        case 0: 
+        targetContainer.textContent = '회원 리스트';
+        break;
+        case 1: 
+        tagMaker(targetContainer, creDiv.tagName, 3, '');
+        tagMaker(targetContainer.children[0], creDiv.tagName, 4, childMaker(creDiv.tagName, 1, '', ''));
+        for(let ii = 0; ii < textArr.length; ii++) {
+          targetContainer.children[0].children[ii].children[0].textContent = textArr[ii];
+          tagMaker(targetContainer.children[1], creDiv.tagName, 5, '', 'class="rowDiv"');
+        }        
+      }
+    }
+
+    const rowDiv = document.getElementsByClassName('rowDiv');
+    //console.dir(rowDiv[0]);
+    for(let i = 0; i < rowDiv.length; i++) {
+      tagMaker(rowDiv[i], creDiv.tagName, 4, '');
+      rowDiv[i].children[0].textContent = `No. ${i + 1}`;
+      rowDiv[i].children[1].textContent = `닉네임 ${i + 1}`;
+      rowDiv[i].children[2].textContent = `이메일 ${i + 1}`;
+      tagMaker(rowDiv[i].children[3], creBtn.tagName, 2, '','value=""');
+      rowDiv[i].children[3].children[0].value = "수정하기";
+      rowDiv[i].children[3].children[0].textContent = "수정하기";
+      rowDiv[i].children[3].children[1].value = "삭제하기";
+      rowDiv[i].children[3].children[1].textContent = "삭제하기";
+    }
+
+    const searchDiv = targetUpDatUser.children[1].children[0].children[1].children[2];
+    tagMaker(searchDiv, creDiv.tagName, 2, '');
+    for(let i = 0; i < searchDiv.children.length; i++) {
+      switch(i) {
+        case 0: 
+        searchDiv.children[i].textContent = "회원목록조회";
+        break;
+        case 1: 
+        let tagArr = [creSlct.tagName, creInput.tagName, creBtn.tagName];
+        tagMaker(searchDiv.children[i], tagArr, 1, '', '');
+      }
+    }
+
+    for(let i = 0; i < searchDiv.children[1].children.length; i++) {
+      const targetTag = searchDiv.children[1].children[i];
+      switch(i) {
+        case 0: 
+        targetTag.name = "찾는방법";
+        targetTag.id = "selectOption";
+        tagMaker(targetTag, creOpt.tagName, 2, '');
+        targetTag.children[0].value = "nickName";
+        targetTag.children[0].textContent = "닉네임";
+        targetTag.children[1].value = "eMail";
+        targetTag.children[1].textContent = "이메일";
+        break;
+
+        case 1: 
+        targetTag.type = "text";
+        targetTag.placeholder="검색할 닉네임이나 이메일을 입력해 주세요"
+        break;
+
+        case 2: 
+        targetTag.value = "검색하기";
+        targetTag.textContent = "검색하기";
+      }
+    }
+
+    
+
+
+
+  //   const doubleDiv = ['div', 'div'];
+  //   const tripleDiv = ['div', 'div', 'div'];
+  //   const quadraDiv = ['div', 'div', 'div', 'div'];
+  //   const pentaDiv = ['div', 'div', 'div', 'div', 'div'];
+  //   const hexaDiv = ['div', 'div', 'div', 'div', 'div', 'div'];
+
+  //   tagMaker(root, 'div', '', '');
+  //   const adminDiv = root.children[0];
+  //   const adminChildren = ['aside', 'main'];
+  //   tagMaker(adminDiv, adminChildren, '');
+
+  //   const aside = adminDiv.children[0];
+
+  //   const main = adminDiv.children[1];
+  //   3
+  //   tagMaker(aside, doubleDiv, '<img/>');
+
+  //   const adminIconDiv = aside.children[0];    
+  //   const adminImg = adminIconDiv.children[0];
+  //   adminImg.src = "./img/admin-icon02.png";
+  //   adminImg.alt = "관리자 아이콘 얼마든지 바뀔 수 있음"
+
+  //   const menuDiv = aside.children[1];    
+  //   tagMaker(menuDiv, tripleDiv, '');
+
+  //   const menuClient = menuDiv.children[0];
+  //   const menuContent = menuDiv.children[1];
+  //   const menuStat = menuDiv.children[2];
+    
+
+  //   tagMaker(menuClient, doubleDiv, '');
+  //   const menuClNameDiv = menuClient.children[0];
+  //   menuClNameDiv.textContent = '회원관리';
+
+  //   const menuClList = menuClient.children[1];    
+  //   const anchorChildren = ['a', 'a'];
+
+  //   tagMaker(menuClList, anchorChildren, '<div class="clickDiv" data-divdat=""></div>');
+  //   menuClList.children[0].href = '#one';
+  //   menuClList.children[1].href = '#two';    
+  //   const addUser = menuClList.children[0].children[0];
+  //   console.dir(addUser);    
+  //   addUser.dataset.divdat = "1";
+  //   addUser.textContent = '●회원추가'
+  //   const upDatUser = menuClList.children[1].children[0];
+  //   upDatUser.dataset.divdat = "2";
+  //   upDatUser.textContent = '●조회, 수정, 삭제'
+
+  //   tagMaker(menuContent, doubleDiv, ' ');
+  //   const menuConNameDiv = menuContent.children[0];
+  //   menuConNameDiv.textContent = '컨텐츠 관리';
+
+  //   const menuConList  = menuContent.children[1];
+
+  //   tagMaker(menuConList, anchorChildren, '<div class="clickDiv" data-divdat=""></div>');
+  //   menuConList.children[0].href = '#three';
+  //   menuConList.children[1].href = '#four';    
+  //   const upMedia = menuConList.children[0].children[0];    
+  //   upMedia.dataset.divdat = "3";
+  //   upMedia.textContent = '●메인 화면 '
+  //   const mngBoard = menuConList.children[1].children[0];
+  //   mngBoard.dataset.divdat = "4";
+  //   mngBoard.textContent = '●게시판 관리';
+
+  //   tagMaker(menuStat, doubleDiv, ' ');
+  //   const menuStatNameDiv = menuStat.children[0];
+  //   menuStatNameDiv.textContent = '통계 관리';
+
+  //   const menuStatList  = menuStat.children[1];
+
+
+  //   tagMaker(menuStatList, 'a', '<div class="clickDiv" data-divdat=""></div>');
+  //   menuStatList.children[0].href = '#five';    
+  //   const statVisitor = menuStatList.children[0].children[0]; 
+  //   statVisitor.dataset.divdat = "5";
+  //   statVisitor.textContent = '●방문자 통계';
+
+
+    
+
+  //   const mainChildren = ['section', 'section', 'section', 'section', 'section'];
+  //   tagMaker(main, mainChildren, '<form><div></div></form>', 'data-sectdat');
+  //   console.dir(main);
+
+  //   for(let i = 0; i < main.children.length; i++) {
+  //     main.children[i].dataset.divdat = i + 1;
+  //     const targetDiv = main.children[i].children[0].children[0];      
+  //     tagMaker(targetDiv, doubleDiv, '');
+  //   }
+
+  //   const sectOne = main.children[0];    
+  //   const sectTwo = main.children[1];  
+  //   const sectThree = main.children[2];
+  //   const sectFour = main.children[3];
+  //   const sectFive = main.children[4];    
+
+  //   const formOne = sectOne.children[0];
+  //   formOne.id = 'formOne';
+  //   const formTwo = sectTwo.children[0];
+  //   formTwo.id = 'formTwo';
+  //   const formThree = sectThree.children[0];
+  //   formThree.id = 'formOne';
+  //   const formFour = sectFour.children[0];
+  //   formFour.id = 'formFour';
+  //   const formFive = sectFive.children[0];
+  //   formFive.id = 'formFive';
+
+  //   const targetAddUser = formOne.children[0];
+  //   const targetUpDatUser = formTwo.children[0];
+  //   const targetUpMedia = formThree.children[0];
+  //   const targetMngBoard = formFour.children[0];
+  //   const targetStatVisitor = formFive.children[0];
+
+  //   const targetAUNameDiv = targetAddUser.children[0];
+  //   targetAUNameDiv.textContent = '회원추가';
+  //   const targetUDUNameDiv = targetUpDatUser.children[0];
+  //   const targetUMNameDiv = targetUpMedia.children[0];
+  //   const targetMBNameDiv = targetMngBoard.children[0];
+  //   const targetSVNameDiv = targetStatVisitor.children[0];
+
+  //   const targetAUListDiv = targetAddUser.children[1];
+  //   const targetUDUListDiv = targetUpDatUser.children[1];
+  //   const targetUMListDiv = targetUpMedia.children[1];
+  //   const targetMBListDiv = targetMngBoard.children[1];
+  //   const targetSVListDiv = targetStatVisitor.children[1];
+    
+  //   tagMaker(targetAUListDiv, hexaDiv, '');
+  //   const AUListOneDiv = targetAUListDiv.children[0];
+  //   const AUListTwoDiv = targetAUListDiv.children[1];
+  //   const AUListThreeDiv = targetAUListDiv.children[2];
+  //   const AUListFourDiv = targetAUListDiv.children[3];
+  //   const AUListFiveDiv = targetAUListDiv.children[4];
+  //   const AUListSixDiv = targetAUListDiv.children[5];
+    
+  //   tagMaker(AUListOneDiv, doubleDiv, '');
+  //   AUListOneDiv.children[0].textContent = '닉네임';
+  //   tagMaker(AUListOneDiv.children[1], 'input', '');
+  //   const nickInput = AUListOneDiv.children[1].children[0];
+  //   nickInput.type = 'text';
+  //   nickInput.name = 'nickName';
+  //   nickInput.id = 'nickName';
+  //   nickInput.placeholder = '닉네임을 입력해 주세요.';
+
+    
+  //   tagMaker(AUListTwoDiv, 'button', '중복 체크');
+  //   const checkDupl = AUListTwoDiv.children[0];    
+  //   checkDupl.value = '중복 체크';
+  //   checkDupl.name = 'checkDupl';
+  //   checkDupl.id = "checkDupl";
+  //   //console.dir(checkDupl);
+
+  //   tagMaker(AUListThreeDiv, doubleDiv, '');
+  //   AUListThreeDiv.children[0].textContent = '이메일';
+  //   const emailContent = ['input', 'input', 'select', 'button'];
+  //   tagMaker(AUListThreeDiv.children[0], emailContent, '');
+  //   const emailName = AUListThreeDiv.children[0].children[0];
+  //   emailName.type = 'text';
+  //   emailName.name = 'email';
+  //   emailName.id = 'emailName';
+  //   emailName.placeholder = '이메일';
+
+  //   const emailDomain = AUListThreeDiv.children[0].children[1];
+  //   emailName.type = 'text';
+  //   emailName.name = 'emailDomain';
+  //   emailName.id = 'emailDoamin';
+    
+  //   const selectDomain = AUListThreeDiv.children[0].children[2];
+  //   selectDomain.innerHTML = '<option value="naver.com">네이버</option><option value="gmail.com">구글</option><option value="hanmail.net">다음</option><option value="kakao.com">카카오</option><option value="">직접입력</option>';
+
+  //   const emailCheckDupl = AUListThreeDiv.children[0].children[2];
+  //   emailCheckDupl.textContent = '중복체크';
+  //   emailCheckDupl.value = '중복체크';
+  //   emailCheckDupl.name = 'emailCheckDupl';
+
+  //   for(let i = 0; i < targetAUListDiv.children.length; i++) {      
+  //     if(i === 0 || i === 1 || i === 2) {
+  //       continue;
+  //     } else {
+  //       tagMaker(targetAUListDiv.children[i], doubleDiv, '');
+  //     }
+  //   }
+  //   targetAUListDiv.children[3].children[0].textContent = '비번';
+  //   tagMaker(targetAUListDiv.children[3].children[1], 'input', '', );
+  //   const passwd = targetAUListDiv.children[3].children[1].children[0];    
+  //   passwd.type = 'password';
+  //   passwd.name = 'passwd';
+  //   passwd.id = 'passwd';
+
+  //   targetAUListDiv.children[4].children[0].textContent = '비번 확인';
+  //   tagMaker(targetAUListDiv.children[4].children[1], 'input', '', 'type="password"');
+  //   const passCheck = targetAUListDiv.children[4].children[1].children[0];
+  //   passCheck.type = 'password';
+  //   passCheck.name = 'passCheck';
+  //   passCheck.id = 'passCheck';
+
+  //   targetAUListDiv.children[5].children[0].textContent = '가입하기';
+  //   tagMaker(targetAUListDiv.children[5].children[1], 'button', '가입하기');
+  //   const btnSigUp = targetAUListDiv.children[5].children[1].children[0];
+  //   btnSigUp.type = 'submit';
+  //   btnSigUp.name = 'btnSigUp';
+  //   btnSigUp.id = 'btnSigUp';
+
+
+      // const tagMaker = (container, tagName, content, tagElement, dataset) => {
+    //   this.tagName = tagName;
+    //   this.content = content;
+    //   let tagArr = [];
+    //   if (Array.isArray(tagName) === false) {
+    //     if(dataset !== undefined) {
+    //       tagArr.push(`<${tagName} ${tagElement}>${content}</${tagName}>`);
+    //     } else {
+    //       tagArr.push(`<${tagName}>${content}</${tagName}>`);
+    //     }
+    //     container.innerHTML = tagArr.join('');
+    //   } else {
+    //     for (let i = 0; i < tagName.length; i++) {
+    //       if(dataset !== undefined) {
+    //         tagArr.push(`<${tagName[i]} ${tagElement}>${content}</${tagName[i]}>`);
+    //     } else {
+    //       tagArr.push(`<${tagName[i]}>${content}</${tagName[i]}>`);
+    //     }
+    //     }
+    //     container.innerHTML = tagArr.join('');
+    //   }
+    // }
+  </script>
+</body>
+</html>

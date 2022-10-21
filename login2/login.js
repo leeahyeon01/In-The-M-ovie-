@@ -22,6 +22,7 @@ form.className = "form";
 
 //fieldset
 let fieldset = document.getElementsByTagName("fieldset")[0];
+console.dir(fieldset);
 fieldset.className = "fieldset";
 console.dir(fieldset);
 makeChDiv(fieldset_child, "div");

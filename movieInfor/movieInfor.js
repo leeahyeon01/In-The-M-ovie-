@@ -1,3 +1,5 @@
+import movie from "../API/MovieApi.js";
+
 let root = document.getElementById("root");
 root.innerHTML = `<div></div>`;
 
@@ -32,15 +34,20 @@ let section = mainDiv.children[1];
 console.dir(section);
 section.className = "section";
 
-makeDiv(sectionArray, "div");
-makeDiv(sectionArray, "div");
+makeDiv(sectionArray, "div"); //poseter
+
+makeDiv(sectionArray, "div"); //imformation
 
 section.innerHTML = sectionArray.join("");
 
-console.dir(section);
-
 const poster = section.children[0];
 poster.className = "poster";
+
+movie(poster);
+
+const posterImg = poster.children[0];
+
+console.dir(posterImg);
 
 //section - movieInformaion
 const informa = section.children[1];

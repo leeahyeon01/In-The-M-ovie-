@@ -1,0 +1,14 @@
+#root {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+.intoTheContext:hover {
+  cursor: pointer;
+}

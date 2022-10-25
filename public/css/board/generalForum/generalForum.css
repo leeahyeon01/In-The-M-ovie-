@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+}
+#app > form {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#app > form > div:nth-child(1) {
+  width: auto;
+  height: auto;
+}
+#app > form > div:nth-child(1) > label {
+  font-size: 2rem;
+}
+#app > form > div:nth-child(1) > input {
+  width: 400px;
+  height: 30px;
+}
+#app > form > div:nth-child(2) {
+  width: auto;
+  height: auto;
+}
+#app > form > div:nth-child(2) > label {
+  font-size: 2rem;
+}
+#app > form > div:nth-child(2) > input {
+  width: 400px;
+  height: 30px;
+}
+#app > form > div:nth-child(3) {
+  width: auto;
+  height: auto;
+}
+#app > form > div:nth-child(3) > label {
+  font-size: 2rem;
+}
+#app > form > div:nth-child(3) > textarea {
+  width: 400px;
+  height: 300px;
+}
+#app > form > div:nth-child(4) {
+  width: 400px;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+#app > form > div:nth-child(4) > button:nth-child(1) {
+  width: 70px;
+  height: 30px;
+  background-color: rgb(20, 157, 167);
+  color: white;
+  border-radius: 10%;
+  border: none;
+}
+#app > form > div:nth-child(4) > button:nth-child(2) {
+  width: 70px;
+  height: 30px;
+  background-color: rgb(129, 129, 129);
+  color: white;
+  border-radius: 10%;
+  border: none;
+  margin-left: 5px;
+}
+#app > form > div:nth-child(4) > label:nth-child(3) {
+  width: 30px;
+  height: 30px;
+  background-image: url(../../../../source/img/add_photo_camera_dark.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-left: 14rem;
+}
+#app > form > div:nth-child(4) > input {
+  display: none;
+}/*# sourceMappingURL=generalForum.css.map */

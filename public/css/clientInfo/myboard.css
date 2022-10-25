@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+#root > aside {
+  width: 20vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+#root > aside > div:nth-child(1) {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#root > aside > div:nth-child(1) > div:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  background-image: url('../../../source/img/my_info_profile.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+#root > aside > div:nth-child(1) > div:nth-child(2) {
+  width: 90px;
+  height: 30px;
+}
+#root > aside > div:nth-child(1) > div:nth-child(2) > p {
+  text-align: left;
+  font-weight: bold;
+}
+#root > aside > div:nth-child(2) {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(173, 166, 166);
+}
+#root > aside > div:nth-child(2) > div:nth-child(1) {
+  width: 200px;
+  height: 30px;
+  margin-top: 2rem;
+}
+#root > aside > div:nth-child(2) > div:nth-child(1) > p {
+  font-weight: 100;
+  font-size: inherit;
+}
+#root > aside > div:nth-child(2) > div:nth-child(2) {
+  width: 200px;
+  height: 30px;
+  margin-top: 2rem;
+}
+#root > aside > div:nth-child(2) > div:nth-child(3) {
+  width: 200px;
+  height: 30px;
+  font-weight: bold;
+    font-size: 1.3rem;
+  margin-top: 2rem;
+}
+
+#root > main {
+  width: 100%;  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}

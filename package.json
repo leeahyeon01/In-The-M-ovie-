@@ -1,0 +1,35 @@
+{
+  "name": "inthemmoudlize",
+  "version": "0.0.1",
+  "description": "wewqq",
+  "main": "./public/index.js",
+  "scripts": {
+    "start": "nodemon app",
+    "test": "asd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minhoyoo1899/projectCLocalModule.git"
+  },
+  "keywords": [
+    "asd"
+  ],
+  "author": "MinhoYoo",
+  "type": "module",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/minhoyoo1899/projectCLocalModule/issues"
+  },
+  "homepage": "https://github.com/minhoyoo1899/projectCLocalModule#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1",
+    "request": "^2.88.2",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "arkit": "^1.6.4",
+    "nodemon": "^2.0.20"
+  }
+}

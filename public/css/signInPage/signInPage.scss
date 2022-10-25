@@ -1,0 +1,77 @@
+*{
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+@mixin size($width, $height){
+  width: $width;
+  height: $height;
+}
+
+@mixin flexSet($justity, $align, $direction:row){
+  display: flex;
+  justify-content: $justity;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+$col-1:#F8F5F5;
+$col-2: #E1DEDE;
+
+
+#app{
+  @include size(100vw,100vh);
+  @include flexSet(center,center,column);
+
+
+
+  &>form{
+    @include size(30vw, 50vh);
+    @include flexSet(space-evenly,center,column);
+    background-color: $col-2;
+
+    &>div{
+      @include size(auto,auto);
+
+      &>input{
+        @include size(300px,50px);
+        background-color: $col-1;
+      }
+    }
+
+    &>div:nth-child(1){
+      margin-top: 2rem;
+    }
+
+    &>div:nth-child(2){
+      @include size(200px, 30px);
+      margin-left: 18rem;
+
+      &>button{
+        @include size(100px,30px);
+        background-color: $col-1;
+        font-weight: 600;
+      }
+    }
+
+    &>div:nth-child(6){
+      @include size(200px, 30px);
+      margin-left: 18rem;
+
+      &>button{
+        @include size(100px,30px);
+        background-color: $col-1;
+        font-weight: 600;
+      }
+    }
+  
+    &>div:nth-child(8){
+      margin-bottom: 1rem;
+    }
+
+  }  
+}
+
+#signUp:hover {
+  cursor: pointer;
+  font-weight: bold;
+}

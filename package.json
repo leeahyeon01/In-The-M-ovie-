@@ -1,5 +1,5 @@
 {
-  "name": "inthemmoudlize",
+  "name": "inthem",
   "version": "0.0.1",
   "description": "wewqq",
   "main": "./public/index.js",
@@ -12,9 +12,9 @@
     "url": "git+https://github.com/minhoyoo1899/projectCLocalModule.git"
   },
   "keywords": [
-    "asd"
+    "movie"
   ],
-  "author": "MinhoYoo",
+  "author": "leeahyeon",
   "type": "module",
   "license": "MIT",
   "bugs": {
@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/minhoyoo1899/projectCLocalModule#readme",
   "dependencies": {
+    "crypto": "^1.0.1",
     "express": "^4.18.2",
+    "express-validator": "^6.14.2",
     "fs": "^0.0.1-security",
     "mysql": "^2.18.1",
     "request": "^2.88.2",

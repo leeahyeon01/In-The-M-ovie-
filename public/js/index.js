@@ -1,6 +1,6 @@
 import styleMaker from "./style/style.js";
 import indexCss from "./style/indexCss.js";
-import vodExpl from "./action/vodEvent.js"
+import vodExpl from "./action/vodEvent.js";
 
 const arrTag = [];
 const root = document.getElementById("root");
@@ -27,15 +27,15 @@ styleMaker.tagMaker(menuDiv, menuDivChildren, "");
 const searchDiv = menuDiv.children[0];
 searchDiv.textContent = "검색";
 searchDiv.style.cursor = "pointer";
-searchDiv.addEventListener('click', (event) => {
-  location.href = '/searchMovie';
+searchDiv.addEventListener("click", event => {
+  location.href = "/searchMovie";
 });
 const signDiv = menuDiv.children[1];
 signDiv.style.cursor = "pointer";
 signDiv.textContent = "로그인";
 
-signDiv.addEventListener('click', (event) => {
-  location.href = '/logIn';
+signDiv.addEventListener("click", event => {
+  location.href = "/logIn";
 });
 
 const signOutDiv = menuDiv.children[2];
@@ -46,16 +46,15 @@ const myInfoDiv = menuDiv.children[3];
 myInfoDiv.style.cursor = "pointer";
 myInfoDiv.textContent = "마이페이지";
 
-myInfoDiv.addEventListener('click', (event) => {
-  location.href = '/myInfo';
+myInfoDiv.addEventListener("click", event => {
+  location.href = "/myInfo";
 });
-
 
 const boardDiv = menuDiv.children[4];
 boardDiv.textContent = "게시판";
 boardDiv.style.cursor = "pointer";
-boardDiv.addEventListener('click', (event) => {
-  location.href = '/board';
+boardDiv.addEventListener("click", event => {
+  location.href = "/board";
 });
 
 const mainChildren = ["div", "section"];
@@ -64,7 +63,16 @@ styleMaker.tagMaker(main, mainChildren);
 const randomDiv = main.children[0];
 const section = main.children[1];
 
-const genreArr = ['코믹', '공포', '액션', '어드벤처', '로맨스', '드라마', 'SF', '범죄/느와르'];
+const genreArr = [
+  "코믹",
+  "공포",
+  "액션",
+  "어드벤처",
+  "로맨스",
+  "드라마",
+  "SF",
+  "범죄/느와르",
+];
 
 styleMaker.ranBtnMaker(randomDiv, genreArr);
 styleMaker.singleCssMulipleStyling(randomDiv.children, indexCss.randomDivCss);
@@ -72,20 +80,17 @@ styleMaker.singleCssMulipleStyling(randomDiv.children, indexCss.randomDivCss);
 for (let i = 0; i < randomDiv.children.length; i++) {
   const target = randomDiv.children[i];
   console.log(target);
-  target.addEventListener('click', (event) => {
-    popup('/randomMovie', '랜덤 영화 추천!', 730, 820, 100, 200, 'no');
+  target.addEventListener("click", event => {
+    popup("/randomMovie", "랜덤 영화 추천!", 730, 820, 100, 200, "no");
     //location.href = '/randomMovie';
   });
 }
 
-function popup(url, name, width, height, top, left, location){    
+function popup(url, name, width, height, top, left, location) {
   const option = `width = ${width}, height = ${height}, top = ${top}, left = ${left}, location = ${location}`;
   window.open(url, name, option);
   // 500 500 100 200 no
 }
-
-
- 
 
 const sectionChidren = ["div", "div"];
 styleMaker.tagMaker(section, sectionChidren);
@@ -106,7 +111,7 @@ mainVod.loop = true;
 mainVod.muted = true;
 mainVod.style.width = "100%";
 
-vodExpl(mainVod, explDiv, 'mouseover', 'flex', 'mouseout', 'none');
+vodExpl(mainVod, explDiv, "mouseover", "flex", "mouseout", "none");
 
 arrTag.push(indexDiv);
 arrTag.push(bg_img);
@@ -121,12 +126,8 @@ arrTag.push(footer);
 
 styleMaker.styling(arrTag, indexCss.indexCss);
 
-
 //footer.style.display = "flex";
 //footer.style.height = "30vh";
-
-
-
 
 styleMaker.tagMaker(footer, "div", "");
 const footerDiv = footer.children[0];
@@ -135,17 +136,19 @@ styleMaker.tagMaker(footerDiv, footerDivChildren, "");
 const footerDivChildren1 = footerDiv.children[0];
 footerDivChildren1.innerHTML = "사업자번호 : 123-45-678910  대표: 이아연";
 const footerDivChildren2 = footerDiv.children[1];
-footerDivChildren2.innerHTML = "(12345) 대전광역시 서구 대덕로 182, 오라클빌딩 3층";
+footerDivChildren2.innerHTML =
+  "(12345) 대전광역시 서구 대덕로 182, 오라클빌딩 3층";
 const footerDivChildren3 = footerDiv.children[2];
-footerDivChildren3.innerHTML = "전화 : 010-159-7598  팩스 : 042-4562-1456  이메일 : support@google.com" 
+footerDivChildren3.innerHTML =
+  "전화 : 010-159-7598  팩스 : 042-4562-1456  이메일 : support@google.com";
 // footer 내용 추가
 
 footerDiv.style.width = "auto";
-footerDiv.style.height = "300px";
+footerDiv.style.height = "100px";
 footerDiv.style.display = "flex";
 footerDiv.style.flexDirection = "column";
 footerDiv.style.alignContent = "center";
-footerDiv.style.justifyContent = "space-around";
+footerDiv.style.justifyContent = "center";
 
 // footerDivChildren1.style.width = "70%";
 footerDivChildren1.style.height = "auto";

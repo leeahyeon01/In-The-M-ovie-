@@ -1,52 +1,52 @@
 import styleMaker from "./myInfoStyleMaker.js";
 import eventTag from "../../action/eventMyInfoMain.js";
 
-
-const app = document.getElementById('app');
+const app = document.getElementById("app");
 const aside = document.createElement("aside");
 app.appendChild(aside);
 // ------------------------app > aside --------------------------------
 
-
 aside.innerHTML = `
   ${styleMaker.elememt("div")}
-  ${styleMaker.elememt('div')}
+  ${styleMaker.elememt("div")}
   `;
-  // ------------------app > aside > div*2 -------------------------------
+// ------------------app > aside > div*2 -------------------------------
 
-  const div1 = document.querySelector("#app>aside>div:nth-child(1)");
-  const div2 = document.querySelector("#app>aside>div:nth-child(2)");
-
+const div1 = document.querySelector("#app>aside>div:nth-child(1)");
+const div2 = document.querySelector("#app>aside>div:nth-child(2)");
 
 styleMaker.tagMaker(div1, "div", "p", "", 0);
 // -----------------------app > aside > div1 > div ----------------------------
-styleMaker.tagMaker(div1, "div", "p", "닉네임", 1 );
+styleMaker.tagMaker(div1, "div", "p", "닉네임", 1);
 // --------------------------app > aside > div1 > div > p ----------------------
 
 styleMaker.tagMaker(div2, "div", "p", "내 정보 수정", 1);
 styleMaker.tagMaker(div2, "div", "p", "내가 찜한 영화", 1);
 styleMaker.tagMaker(div2, "div", "p", "내가 쓴 글", 1);
-console.log(div2);
+styleMaker.tagMaker(div2, "div", "p", "홈으로", 1);
+
 for (let i = 0; i < div2.children.length; i++) {
   const target = div2.children[i];
-  target.addEventListener('click', (event) => {
+  target.addEventListener("click", event => {
     switch (i) {
       case 0:
-        location.href = '/myInfo';
+        location.href = "/myInfo";
         break;
       case 1:
-        location.href = '/myFavoMov';
+        location.href = "/myFavoMov";
         break;
-      
+
       case 2:
-        location.href = '/myBoard';
+        location.href = "/myBoard";
+        break;
+
+      case 3:
+        location.href = "/";
         break;
     }
   });
 }
 // -------------------------app > aside > div2 > (div > p) *3--------------------
-
-
 
 //===================================================================================
 
@@ -67,7 +67,7 @@ main.innerHTML = `
 
 // -------------------------------- app > main > div*2 -----------------------
 
-const mainFirstChild = document.querySelector('#app>main>div:nth-child(1)');
+const mainFirstChild = document.querySelector("#app>main>div:nth-child(1)");
 
 mainFirstChild.innerHTML = `
   ${styleMaker.mainElememt("div")}
@@ -76,14 +76,14 @@ mainFirstChild.innerHTML = `
 // --------------------- app > main >  div:nth-child(1) > div*2 ----------------
 
 const profileImgTextDiv = mainFirstChild.children[0];
-const profileImgP = document.createElement('p');
+const profileImgP = document.createElement("p");
 profileImgTextDiv.appendChild(profileImgP);
 profileImgP.innerHTML = "프로필 이미지";
 console.log(profileImgP);
 // -------------- app > main > div:nth-child(1) > div:nth-child(1) > p ----------
 
 const profileImgDiv = mainFirstChild.children[1];
-const fileSelectDiv = document.createElement('div');
+const fileSelectDiv = document.createElement("div");
 profileImgDiv.appendChild(fileSelectDiv);
 
 fileSelectDiv.innerHTML = `
@@ -100,13 +100,13 @@ deleButton.setAttribute("type", "button");
 
 // -------------------app > main > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div id="image-show", button id = "delete"------------------
 
-const imgUploadDiv = document.createElement('div');
+const imgUploadDiv = document.createElement("div");
 profileImgDiv.appendChild(imgUploadDiv);
 imgUploadDiv.setAttribute("id", "img-upload");
 
 // --------------- app > main > div:nth-child(1) > div:nth-child(2) > div id = "img-upload" --------------------------------
 
-const form = document.createElement('form');
+const form = document.createElement("form");
 imgUploadDiv.appendChild(form);
 form.setAttribute("method", "post");
 form.setAttribute("enctype", "multipart/form-data");
@@ -119,7 +119,7 @@ formChildDiv.appendChild(lbFile);
 lbFile.setAttribute("for", "file");
 lbFile.setAttribute("id", "lbFile");
 
-const fileInput = document.createElement('input');
+const fileInput = document.createElement("input");
 formChildDiv.appendChild(fileInput);
 fileInput.setAttribute("type", "file");
 fileInput.setAttribute("id", "file");
@@ -211,7 +211,7 @@ confirmInput.setAttribute("type", "password");
 confirmInput.setAttribute("id", "psConfirm");
 confirmInput.setAttribute("name", "infoPsConfirm");
 
-//------------app > main > div:nth-child(2) > div > div(3) > label, input------- 
+//------------app > main > div:nth-child(2) > div > div(3) > label, input-------
 
 const nickNameDiv = profileChangeDiv.children[3];
 
@@ -267,23 +267,19 @@ modalButton2.innerHTML = "취소";
 //-------- app > main > div:nth-child(2) > div > div(6) > span, button*2 -------
 // 모달 화면
 
-
-
-
 // 여기부터는 자바스크립트 기능 구현 ↓↓
 
-
-const save = document.getElementById('saveButton');
+const save = document.getElementById("saveButton");
 save.onclick = showImage;
 
-function showImage(){
-  let newImg = document.getElementById('image-show').lastElementChild;
+function showImage() {
+  let newImg = document.getElementById("image-show").lastElementChild;
   newImg.style.visibility = "visible";
 }
 
-const input = document.getElementById('file');
+const input = document.getElementById("file");
 
-input.addEventListener('change',()=>{
+input.addEventListener("change", () => {
   const file = input.files[0]; //선택된 파일 가져옴
   let newImage = document.createElement("img");
   newImage.setAttribute("class", "img");
@@ -293,36 +289,29 @@ input.addEventListener('change',()=>{
   newImage.style.visibility = "hidden";
   newImage.style.objectFit = "contain";
 
-  let container = document.getElementById('image-show');
+  let container = document.getElementById("image-show");
   container.style.visibility = "hidden";
   container.appendChild(newImage);
-  
-
 });
 // -----------사진 파일 가져와서 저장하는 함수 --------------------
 
-
-const delButton = document.getElementById('delete');
+const delButton = document.getElementById("delete");
 delButton.onclick = deleteimage;
 
-function deleteimage(){
-  const parent = document.getElementById('image-show');
-  const child = document.querySelector('#image-show>img');
+function deleteimage() {
+  const parent = document.getElementById("image-show");
+  const child = document.querySelector("#image-show>img");
   parent.removeChild(child);
   // console.log(parent.children)
   // console.log(child);
 
-  // *parent.innerHTML = ""; 
-  // *removeChild가 더 정석적이지만 복잡해서 나중에는 innerHTML =""; 을 더 많이 쓰게 될 것. 둘 다 상관없지만 편하게 쓰려면 innerHTML=""; 쓰는게 좋음. 
-  
+  // *parent.innerHTML = "";
+  // *removeChild가 더 정석적이지만 복잡해서 나중에는 innerHTML =""; 을 더 많이 쓰게 될 것. 둘 다 상관없지만 편하게 쓰려면 innerHTML=""; 쓰는게 좋음.
+
   parent.style.visibility = "visible";
 }
-// image-show 부모노드에서 자식 노드인 img 지워버림 
-// ----사진 삭제할 수 있고 삭제하면 다시 기본 사진 뜨게 만든 함수-------- 
-
-
-
-
+// image-show 부모노드에서 자식 노드인 img 지워버림
+// ----사진 삭제할 수 있고 삭제하면 다시 기본 사진 뜨게 만든 함수--------
 
 // //* function loadFile(input){
 //   const file = input.files[0]; //선택된 파일 가져옴
@@ -337,65 +326,57 @@ function deleteimage(){
 //   const container = document.getElementById('image-show');
 //   container.appendChild(newImage);
 // };
-// *html에 js가 defer로 연결되어 있어서 아직 선언이 안됨, 해결하려면 async써야함. react 쓸거면 이걸로 연습해 보는게 좋음. 
-
-
+// *html에 js가 defer로 연결되어 있어서 아직 선언이 안됨, 해결하려면 async써야함. react 쓸거면 이걸로 연습해 보는게 좋음.
 
 confirmInput.onclick = minLength;
 
-function minLength(){
-
+function minLength() {
   const psValue = passwordInput.value;
-  let regPass = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{5,}$/;
-  
+  let regPass =
+    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{5,}$/;
 
-  if(psValue.length<5 || psValue.length>16){
+  if (psValue.length < 5 || psValue.length > 16) {
     alert("비밀번호는 5자리 이상, 16자리 이하로 입력해주세요");
     return false;
-    
-  } else if(psValue.search(/\s/) != -1){
+  } else if (psValue.search(/\s/) != -1) {
     alert("비밀번호는 공백 없이 입력해주세요");
     return false;
   }
 
-  if(!regPass.test(psValue)){
-    alert("비밀번호는 영문, 숫자, 특수문자(!@^*%#&_~만 허용)를 사용하여 5~16자리 입력해주세요. 영문은 대소문자를 구분합니다.");
+  if (!regPass.test(psValue)) {
+    alert(
+      "비밀번호는 영문, 숫자, 특수문자(!@^*%#&_~만 허용)를 사용하여 5~16자리 입력해주세요. 영문은 대소문자를 구분합니다."
+    );
     return false;
-  } else{
-    alert("비밀번호가 정상적으로 입력되었습니다.")
+  } else {
+    alert("비밀번호가 정상적으로 입력되었습니다.");
     return true;
   }
-
 }
 //---------------------비밀번호 유효성 검사--------------------------
 
-
-
 modifyButton.onclick = password;
 
-function password(){
+function password() {
   // const pass1 = tag.password.value;
   const pass1 = passwordInput.value;
   // const pass2 = tag.psConfirm.value;
   const pass2 = confirmInput.value;
-  if(pass1 !== pass2){
+  if (pass1 !== pass2) {
     alert("비밀번호가 일치하지 않습니다");
     return false;
-  } 
-  
+  }
 }
 
-//--------------비밀번호 일치하는지 확인하는 함수---------------------- 
+//--------------비밀번호 일치하는지 확인하는 함수----------------------
 
-
-function init(){
-  withdrawButton.addEventListener('click', function(){
-    modalDiv.style.visibility="visible";
+function init() {
+  withdrawButton.addEventListener("click", function () {
+    modalDiv.style.visibility = "visible";
   });
-  modalButton2.addEventListener('click', function(){
-    modalDiv.style.visibility="hidden";
+  modalButton2.addEventListener("click", function () {
+    modalDiv.style.visibility = "hidden";
   });
 }
 init();
 //--------------------------모달 함수-----------------------------
-

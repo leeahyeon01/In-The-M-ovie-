@@ -155,6 +155,88 @@ app.get("/movieParam", (req, res) => {
 `);
 });
 
+app.get("/randomMovieParam", (req, res) => {
+  console.log(req.query);
+  let nation;
+  switch (req.query.nation) {
+    case "ko":
+      nation = "대한민국";
+      break;
+    case "en":
+      nation = "미국";
+      break;
+  }
+  res.send(`
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>      
+      <link rel="stylesheet" href="/public/css/randomMovie/randomMovie.css" defer/>
+    </head>
+    <body>
+      <div id="app">
+        <div id="drawer">
+        <div id="card" style="transform-style: preserve-3d; transform: rotateY(0deg); transition: all 1s ease 0s; background-image: url('${req.query.poster}'); background-size: cover;">
+        <div id="front" style="backface-visibility: visible;">
+        </div>
+        <div>
+          <div>
+            <div>
+              <span>개봉: ${req.query.date}</span>
+              </div>
+            <div>
+              <span>국가 : ${nation}</span>
+            </div>
+            <div>
+              <span>평점: ${req.query.rate}점</span>
+            </div>
+            <div>
+              <span>시놉시스 : ${req.query.text}</span>
+            </div>
+          </div>
+         </div>
+        </div>
+       </div>
+        <span>${req.query.title}</span>
+        <button>다른영화 추천 받기</button>
+      </div>
+      <script>
+        const drawer = document.getElementById('drawer');
+        const card = document.getElementById('card');
+        const front =document.getElementById('front');
+
+        let isClick = true;
+
+
+        drawer.addEventListener('click', ()=>{
+          if(isClick===true){
+            isClick = false;
+            console.log(isClick);
+        
+            card.style.transformStyle = "preserve-3d";
+            card.style.transform = "rotateY(180deg)";
+            card.style.transition = "1s";
+          } else{
+            isClick = true;
+            console.log(isClick);
+        
+            card.style.transformStyle = "preserve-3d";
+            card.style.transform = "rotateY(0deg)";
+            card.style.transition = "1s";
+            front.style.backfaceVisibility = "visible";
+          }
+        })
+
+
+      </script>
+    </body>
+  </html>
+  `);
+});
+
 app.get("/apiDB", (req, res) => {
   res.sendFile(path.join(__dirname, "/build/apiDB.html"));
 });

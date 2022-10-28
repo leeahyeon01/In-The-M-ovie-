@@ -73,23 +73,46 @@ const genreArr = [
   "SF",
   "범죄/느와르",
 ];
+const movieTitleArr = [
+  "공조",
+  "라이트 아웃",
+  "존 윅 3",
+  "언차티드",
+  "헤어질 결심",
+  "보헤미안 랩소디",
+  "테넷",
+  "신세계",
+];
 
 styleMaker.ranBtnMaker(randomDiv, genreArr);
 styleMaker.singleCssMulipleStyling(randomDiv.children, indexCss.randomDivCss);
 
-for (let i = 0; i < randomDiv.children.length; i++) {
-  const target = randomDiv.children[i];
-  console.log(target);
-  target.addEventListener("click", event => {
-    popup("/randomMovie", "랜덤 영화 추천!", 730, 820, 100, 200, "no");
-    //location.href = '/randomMovie';
+const tmdbInfo = (query, targetDiv) => {
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=c4fc9ca86ccc89b226126b6beccd9731&language=ko&page=1&include_adult=true&query=${query}`;
+  const request = new XMLHttpRequest();
+  request.open("GET", url);
+  request.responseType = "json";
+  request.send();
+  request.addEventListener("load", event => {
+    const apiDat = request.response;
+    console.log(apiDat);
+    const urlParam = `/randomMovieParam?title=${apiDat.results[0].title}&rate=${apiDat.results[0].vote_average}&nation=${apiDat.results[0].original_language}&text=${apiDat.results[0].overview}&date=${apiDat.results[0].release_date}&poster=https://image.tmdb.org/t/p/w500${apiDat.results[0].poster_path}`;
+
+    targetDiv.addEventListener("click", event => {
+      popup(urlParam, "검색한 영화!", 730, 820, 100, 200, "no");
+    });
   });
-}
+};
 
 function popup(url, name, width, height, top, left, location) {
   const option = `width = ${width}, height = ${height}, top = ${top}, left = ${left}, location = ${location}`;
   window.open(url, name, option);
   // 500 500 100 200 no
+}
+
+for (let i = 0; i < randomDiv.children.length; i++) {
+  const target = randomDiv.children[i];
+  tmdbInfo(movieTitleArr[i], target);
 }
 
 const sectionChidren = ["div", "div"];
@@ -125,9 +148,6 @@ arrTag.push(vodDiv);
 arrTag.push(footer);
 
 styleMaker.styling(arrTag, indexCss.indexCss);
-
-//footer.style.display = "flex";
-//footer.style.height = "30vh";
 
 styleMaker.tagMaker(footer, "div", "");
 const footerDiv = footer.children[0];

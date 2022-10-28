@@ -24,6 +24,7 @@ const menuDiv = header.children[0];
 const menuDivChildren = ["div", "div", "div", "div", "div"];
 styleMaker.tagMaker(menuDiv, menuDivChildren, "");
 
+
 const searchDiv = menuDiv.children[0];
 searchDiv.textContent = "검색";
 searchDiv.style.cursor = "pointer";
@@ -57,6 +58,7 @@ boardDiv.style.cursor = "pointer";
 boardDiv.addEventListener('click', (event) => {
   location.href = '/board';
 });
+
 
 const mainChildren = ["div", "section"];
 styleMaker.tagMaker(main, mainChildren);
@@ -120,6 +122,8 @@ arrTag.push(vodDiv);
 arrTag.push(footer);
 
 styleMaker.styling(arrTag, indexCss.indexCss);
+
+
 
 
 //footer.style.display = "flex";

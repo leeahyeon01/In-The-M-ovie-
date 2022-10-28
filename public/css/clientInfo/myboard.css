@@ -71,6 +71,12 @@
   margin-top: 2rem;
 }
 
+#root > aside > div:nth-child(2) > div:nth-child(4) {
+  width: 200px;
+  height: 30px;
+  margin-top: 5rem;
+}
+
 #root > main {
   width: 80vw;
   height: 100vh;

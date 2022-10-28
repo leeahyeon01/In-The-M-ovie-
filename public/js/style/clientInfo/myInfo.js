@@ -26,7 +26,8 @@ styleMaker.tagMaker(div1, "div", "p", "닉네임", 1 );
 styleMaker.tagMaker(div2, "div", "p", "내 정보 수정", 1);
 styleMaker.tagMaker(div2, "div", "p", "내가 찜한 영화", 1);
 styleMaker.tagMaker(div2, "div", "p", "내가 쓴 글", 1);
-console.log(div2);
+styleMaker.tagMaker(div2, "div", "p", "홈으로", 1);
+
 for (let i = 0; i < div2.children.length; i++) {
   const target = div2.children[i];
   target.addEventListener('click', (event) => {
@@ -40,6 +41,10 @@ for (let i = 0; i < div2.children.length; i++) {
       
       case 2:
         location.href = '/myBoard';
+        break;
+      
+      case 3:
+        location.href = '/';
         break;
     }
   });

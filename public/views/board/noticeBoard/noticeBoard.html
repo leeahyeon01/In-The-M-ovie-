@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/board/noticeBoard/noticeBorad.css" />
+    <title>자유게시판</title>
+    <style>
+      /* #root > section:nth-of-type(1) > article:nth-of-type(5) {
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+      } */
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <header>
+        <div class="boardName">자유게시판</div>
+      </header>
+
+      <!-- *첫번째 section -->
+      <section>
+        <!-- 첫번째 article -->
+        <article>
+          <div class="textTitle">
+            <div>제목</div>
+            <div>가입했습니다 반가워용~</div>
+          </div>
+
+          <div class="section1_right">
+            <div>
+              <div>작성자</div>
+              <div class="userimg">
+                <img class="userImg" src="./user.png" alt="" />
+              </div>
+              <div>이아연</div>
+            </div>
+
+            <div>
+              <div>작성일</div>
+              <div class="date">00-00-00</div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 두번째 article -->
+        <article>
+          <div>
+            <div>첨부파dd일</div>
+            <div>0개</div>
+          </div>
+
+          <div>
+            <div>조회수</div>
+            <div>8</div>
+          </div>
+        </article>
+
+        <!-- 세번째 article -->
+        <article>
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+        </article>
+
+        <!-- 네번째 article -->
+        <article>
+          <div></div>
+          <button>업로드</button>
+
+          <div>
+            <input id="input" type="file" multiple />
+            <button>수정</button>
+            <button>삭제</button>
+            <button>목록</button>
+          </div>
+        </article>
+
+        <!-- 다섯번째 article -->
+        <article>
+          <div>
+            <div>
+              <div><img src="./thumbs_up.png" alt="" /></div>
+              <div>
+                <img src="./thumbs_down.png" alt="" />
+              </div>
+            </div>
+
+            <div>
+              <div>7</div>
+              <div>1</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ** 두번째 section -->
+      <section>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+
+        <button>등록</button>
+      </section>
+
+      <!-- **세번째 section  -->
+      <section>
+        <div>
+          <div>댓글 댓글</div>
+          <div>아이디</div>
+        </div>
+        <div>
+          <div>댓글 댓글</div>
+          <div>아이디</div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const input = document.getElementById("input");
+      let selectedFiles = input.files;
+    </script>
+  </body>
+</html>

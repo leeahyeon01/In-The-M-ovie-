@@ -7,12 +7,13 @@
   align-content: center;
   justify-content: center;
   align-items: center;
+  background-image: url("../../../source/img/bg_dpimg.png");
 }
 
 .form {
-  border: solid 1px black;
-  width: 350px;
-  height: 300px;
+  border: solid 1px white;
+  width: 40vw;
+  height: 50vh;
   font-size: 12px;
   display: flex;
   flex-direction: column;
@@ -23,6 +24,8 @@
 }
 
 .fieldset {
+  width: 30vw;
+  height: 50vh;
   border: none;
   display: flex;
   flex-direction: column;
@@ -30,13 +33,16 @@
   align-items: center;
 }
 .fieldset > div:nth-child(1) {
-  width: 200px;
+  width: 300px;
+  height: 50px;
   font-style: oblique;
   font-size: medium;
+  color: white;
 }
 .fieldset > input {
   width: 200px;
-  margin: 4px;
+  height: 30px;
+  margin: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -47,11 +53,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: white;
 }
 .fieldset > button {
   border: 1px solid black;
-  width: 70px;
-  height: 30px;
+  width: 75px;
+  height: 35px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -59,4 +66,5 @@
   justify-content: center;
   align-items: center;
   background-color: azure;
+  margin-top: 15px;
 }/*# sourceMappingURL=login.css.map */

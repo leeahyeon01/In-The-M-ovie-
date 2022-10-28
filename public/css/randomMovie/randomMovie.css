@@ -28,7 +28,7 @@
 #app > div > div > div:nth-child(1) {
   width: 100%;
   height: 100%;
-  background-image: url(./공조2.jpeg);
+  background-image: url(../../../source/img/gongjo2.jpeg);
   background-size: contain;
   background-repeat: no-repeat;
   -webkit-backface-visibility: hidden;

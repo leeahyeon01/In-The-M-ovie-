@@ -57,9 +57,10 @@ const indexCss = {
     width: "88%",
   },{
     width: "100%",
-    height: "10vh",
+    height: "30vh",
     backgroundColor: "rgba(45, 45, 45, 0.5)",
     color: "rgba(214, 214, 214, 1)",
+    margin: '6% 0% 0% 0%',
   },],
 randomDivCss: {
   width: "8vw",

@@ -36,6 +36,8 @@ div {
 .poster {
   width: 300px;
   height: 500px;
+  /* background-image: url(../../../source/img/gongjo2.jpeg); */
+  background-size: cover;
 }
 
 .informa {

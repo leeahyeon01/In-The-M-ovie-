@@ -3,6 +3,9 @@ import path from "path";
 import mysql from "mysql";
 import request from "request";
 import * as fs from "fs";
+import alert from "alert";
+
+import { allowedNodeEnvironmentFlags } from "process";
 
 const dbconfig = {
   host: "localhost",
@@ -285,15 +288,6 @@ app.get("/dbtest4", (req, res) => {
   });
 });
 
-// app.get('/dbtest2', (req, res) => {
-//   connection.query('SELECT * FROM director', (error, rows) => {
-//     if (error) throw error;
-//     console.log(`data : ${rows}`);
-//     const html = readFileSync(__dirname + '/build/apiDB.html');
-//     res.json({html: html.toString(), data: rows});
-//   });
-// });
-
 app.get("/dbPage", (req, res) => {
   connection.query("SELECT * FROM director", (error, rows) => {
     if (error) throw error;
@@ -408,6 +402,35 @@ app.post("/signUp", (req, res) => {
     }
   });
   res.redirect("/signInPage");
+});
+
+app.post("/signIn", (req, res) => {
+  console.log(req.body);
+  const nickname = req.body.nickName;
+  const password = req.body.pwd;
+  console.log(nickname);
+  console.log(password);
+
+  const sql = `SELECT id_seq, password FROM in_the_m.users where nickname ="${nickname}"`;
+
+  connection.query(sql, (err, result, field) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send("Internal Sever Error");
+    }
+    if (result[0].password === password) {
+      res.send(
+        "<script>alert('로그인되었습니다.'); location.href='/';</script>"
+      );
+    } else {
+      res.send(
+        "<script>alert('비밀번호가 틀립니다.'); location.href='/logIn';</script>"
+      );
+    }
+    console.log(result);
+    console.log(result[0].password);
+  });
+  //res.redirect("/logIn");
 });
 
 app.listen(app.get("port"), () => {

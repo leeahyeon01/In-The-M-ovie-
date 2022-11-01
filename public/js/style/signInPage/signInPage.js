@@ -28,6 +28,7 @@ function formMaker() {
   const confirmButton = document.createElement("button");
   confirmButtonDiv.appendChild(confirmButton);
   confirmButton.textContent = "중복확인";
+  confirmButton.type = "submit";
   // app > form > div:nth-child(2) > button
 
   const emailDiv = document.createElement("div");

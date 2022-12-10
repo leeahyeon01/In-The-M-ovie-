@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="664px" preserveAspectRatio="none" style="width:679px;height:664px;" version="1.1" viewBox="0 0 679 664" width="679px" zoomAndPan="magnify"><defs/><g><ellipse cx="115.9396" cy="21.8774" fill="#F8F8F8" rx="33.4056" ry="12.8774" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="43" x="94.4396" y="25.3618">admin</text><ellipse cx="115.8906" cy="64.7713" fill="#F8F8F8" rx="56.8566" ry="13.7713" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="82" x="74.8906" y="68.2557">adminLogin</text><ellipse cx="116.1259" cy="107.8774" fill="#F8F8F8" rx="22.0919" ry="12.8774" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="27" x="102.6259" y="111.3618">app</text><ellipse cx="115.9396" cy="149.8774" fill="#F8F8F8" rx="33.4056" ry="12.8774" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="43" x="94.4396" y="153.3618">board</text><ellipse cx="116.0032" cy="470.9938" fill="#F8F8F8" rx="75.4692" ry="17.4938" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="127" x="52.5032" y="474.4782">clientInfo/styleMaker</text><ellipse cx="296.2619" cy="21.8774" fill="#F8F8F8" rx="15.7279" ry="12.8774" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="18" x="287.2619" y="25.3618">db</text><ellipse cx="296.1721" cy="67.0276" fill="#F8F8F8" rx="65.6381" ry="15.5276" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="104" x="244.1721" y="70.512">dynamicForum</text><ellipse cx="459.3445" cy="289.8621" fill="#F8F8F8" rx="64.8105" ry="15.3621" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="102" x="408.3445" y="293.3465">eventMyInfoMain</text><ellipse cx="116.132" cy="640.8774" fill="#F8F8F8" rx="42.598" ry="12.8774" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="56" x="88.132" y="644.3618">indexCss</text><ellipse cx="116.1274" cy="515.9748" fill="#F8F8F8" rx="13.5934" ry="11.4748" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="12" x="110.1274" y="519.4591">js</text><ellipse cx="296.2827" cy="111.8774" fill="#F8F8F8" rx="27.7487" ry="12.8774" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="35" x="278.7827" y="115.3618">login</text><ellipse cx="296.0492" cy="154.103" fill="#F8F8F8" rx="53.5152" ry="13.103" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="73" x="259.5492" y="157.5874">moveSlide</text><ellipse cx="459.3841" cy="21.97" fill="#F8F8F8" rx="55.3501" ry="13.47" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="78" x="420.3841" y="25.4544">movieInfor</text><ellipse cx="459.3244" cy="64.8774" fill="#F8F8F8" rx="51.7904" ry="12.8774" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="69" x="424.8244" y="68.3618">movieList</text><ellipse cx="116.0817" cy="379.8774" fill="#F8F8F8" rx="47.5477" ry="12.8774" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="63" x="84.5817" y="383.3618">myboard</text><ellipse cx="459.522" cy="109.1976" fill="#F8F8F8" rx="63.988" ry="15.1976" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="100" x="409.522" y="112.682">myboardHead</text><ellipse cx="116.2722" cy="422.8476" fill="#F8F8F8" rx="57.2382" ry="13.8476" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="83" x="74.7722" y="426.332">myFavoMov</text><ellipse cx="116.1822" cy="289.8774" fill="#F8F8F8" rx="37.6482" ry="12.8774" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="49" x="91.6822" y="293.3618">myInfo</text><ellipse cx="116.2626" cy="334.9457" fill="#F8F8F8" rx="67.7286" ry="15.9457" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="109" x="61.7626" y="338.4301">myInfoStyleMaker</text><ellipse cx="459.2984" cy="154.9529" fill="#F8F8F8" rx="62.7644" ry="14.9529" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="97" x="410.7984" y="158.4373">randomMovie</text><ellipse cx="613.2577" cy="22.0447" fill="#F8F8F8" rx="55.7237" ry="13.5447" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="79" x="573.7577" y="25.5291">signInPage</text><ellipse cx="116.2472" cy="598.8774" fill="#F8F8F8" rx="24.2132" ry="12.8774" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="30" x="101.2472" y="602.3618">style</text><ellipse cx="115.8391" cy="556.8774" fill="#F8F8F8" rx="43.3051" ry="12.8774" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="57" x="87.3391" y="560.3618">vodEvent</text><ellipse cx="116.2722" cy="192.8476" fill="#F8F8F8" rx="57.2382" ry="13.8476" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="83" x="74.7722" y="196.332">writeForum</text><ellipse cx="116.2092" cy="242.235" fill="#F8F8F8" rx="81.6752" ry="18.735" style="stroke: #383838; stroke-width: 0.5;"/><text fill="#000000" font-family="Tahoma, sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="141" x="45.7092" y="245.7194">writeForum/styleMaker</text><!--MD5=[4dd4fc55d3ab69177d99d964d3db4f60]
+link <b>js</b> to indexCss--><path d="M102.3421,514.895 C79.7951,513.944 35.6012,515.959 18.0339,544 C1.9887,569.6112 1.9887,586.3888 18.0339,612 C28.6248,628.905 48.8151,636.5549 68.1304,639.8183 " fill="none" id="&lt;b&gt;js&lt;/b&gt;-&gt;indexCss" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="73.5464,640.6265,65.2354,635.3419,68.6012,639.8885,64.0546,643.2543,73.5464,640.6265" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[f138c0557267b80f201f168f7a845d43]
+link <b>js</b> to style--><path d="M102.3421,514.895 C79.7951,513.944 35.6012,515.959 18.0339,544 C11.899,553.793 11.899,560.2075 18.0339,570 C32.1337,592.506 63.2477,598.608 86.6598,599.7945 " fill="none" id="&lt;b&gt;js&lt;/b&gt;-&gt;style" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="91.8289,599.9843,82.9819,595.6563,86.8323,599.8006,82.688,603.6509,91.8289,599.9843" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[bce7efa7bcddb32f91644beed9ff0f72]
+link <b>js</b> to vodEvent--><path d="M116.034,527.756 C116.034,531.449 116.034,535.141 116.034,538.833 " fill="none" id="&lt;b&gt;js&lt;/b&gt;-&gt;vodEvent" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="116.034,543.867,120.034,534.867,116.034,538.867,112.034,534.867,116.034,543.867" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[5b4b6885086506c888ca1f71fef27c9a]
+link <b>myboard</b> to clientInfo/styleMaker--><path d="M68.6818,381.09 C49.2004,384.3 28.7256,391.934 18.0339,409 C11.4271,419.546 11.4271,426.454 18.0339,437 C24.702,447.643 35.0102,455.011 46.4805,460.098 " fill="none" id="&lt;b&gt;myboard&lt;/b&gt;-&gt;clientInfo/styleMaker" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="51.1039,462.005,44.3101,454.8744,46.4819,460.0978,41.2586,462.2696,51.1039,462.005" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[cee7b3b802a2d6e7e3ebd93175b9967d]
+link <b>myFavoMov</b> to clientInfo/styleMaker--><path d="M116.034,437.238 C116.034,440.936 116.034,444.634 116.034,448.332 " fill="none" id="&lt;b&gt;myFavoMov&lt;/b&gt;-&gt;clientInfo/styleMaker" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="116.034,453.375,120.034,444.375,116.034,448.375,112.034,444.375,116.034,453.375" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[0f8cf3627fbbfbe35f33f11512aeb236]
+link <b>myInfo</b> to eventMyInfoMain--><path d="M153.58,290 C209.703,290 318.081,290 389.359,290 " fill="none" id="&lt;b&gt;myInfo&lt;/b&gt;-&gt;eventMyInfoMain" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="394.426,290,385.426,286,389.426,290,385.426,294,394.426,290" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[fa072ed9bc1808f59233b0cd10b00941]
+link <b>myInfo</b> to myInfoStyleMaker--><path d="M116.034,303.063 C116.034,306.511 116.034,309.96 116.034,313.409 " fill="none" id="&lt;b&gt;myInfo&lt;/b&gt;-&gt;myInfoStyleMaker" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="116.034,318.828,120.034,309.828,116.034,313.828,112.034,309.828,116.034,318.828" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[d387ce2859a53e11ea2921f7ee337c35]
+link <b>writeForum</b> to writeForum/styleMaker--><path d="M116.034,207.176 C116.034,210.858 116.034,214.54 116.034,218.222 " fill="none" id="&lt;b&gt;writeForum&lt;/b&gt;-&gt;writeForum/styleMaker" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="116.034,223.242,120.034,214.242,116.034,218.242,112.034,214.242,116.034,223.242" style="stroke: #000000; stroke-width: 1.0;"/><!--MD5=[e487031b357bb311bb051e647f70730c]
+link <b>admin</b> to <b>adminLogin</b>--><!--MD5=[4815320eb9f88edab924b7a3bf6affd3]
+link <b>adminLogin</b> to <b>app</b>--><!--MD5=[897c25a38e923047bdeff503af9412a0]
+link <b>app</b> to <b>board</b>--><!--MD5=[088ede0036f321efb5d29a8900727542]
+link <b>admin</b> to <b>db</b>--><!--MD5=[73e8eef08932582934ce9e606ec0ea33]
+link <b>db</b> to <b>dynamicForum</b>--><!--MD5=[080be0e6aae97484d8a3854e434f36a5]
+link <b>dynamicForum</b> to <b>login</b>--><!--MD5=[da813e6907b1b996f829cb501b4456f5]
+link <b>login</b> to <b>moveSlide</b>--><!--MD5=[77f3391803f340925d354e2f893ace5f]
+link <b>db</b> to <b>movieInfor</b>--><!--MD5=[b255458cfd70ebbe6d307b9b586f0878]
+link <b>movieInfor</b> to <b>movieList</b>--><!--MD5=[7f3a40256b1b899e0f402635e4212447]
+link <b>movieList</b> to <b>myboardHead</b>--><!--MD5=[24f16cbd71938c1185159dea9ea355c5]
+link <b>myboardHead</b> to <b>randomMovie</b>--><!--MD5=[d329b643937718899891c316bbb9c68b]
+link <b>movieInfor</b> to <b>signInPage</b>--><script type="text/plantuml"><![CDATA[MD5=[f4eec809aea5daa9a4eba2f32d1337cb]
+@startuml
+
+scale max 1920 width
+left to right direction
+
+skinparam nodesep 16
+skinparam ranksep 33
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName Tahoma
+skinparam defaultFontSize 12
+skinparam roundCorner 6
+skinparam dpi 150
+skinparam arrowColor black
+skinparam arrowThickness 0.5
+skinparam packageTitleAlignment left
+
+skinparam usecase {
+  borderThickness 0.5
+}
+
+skinparam rectangle {
+  borderThickness 0.5
+}
+
+skinparam component {
+  borderThickness 1
+}
+
+
+(<b>admin</b>)
+(<b>adminLogin</b>)
+(<b>app</b>)
+(<b>board</b>)
+(clientInfo/styleMaker)
+(<b>db</b>)
+(<b>dynamicForum</b>)
+(eventMyInfoMain)
+(indexCss)
+(<b>js</b>)
+(<b>login</b>)
+(<b>moveSlide</b>)
+(<b>movieInfor</b>)
+(<b>movieList</b>)
+(<b>myboard</b>)
+(<b>myboardHead</b>)
+(<b>myFavoMov</b>)
+(<b>myInfo</b>)
+(myInfoStyleMaker)
+(<b>randomMovie</b>)
+(<b>signInPage</b>)
+(style)
+(vodEvent)
+(<b>writeForum</b>)
+(writeForum/styleMaker)
+
+
+(<b>js</b>) -[thickness=1]> (indexCss)
+(<b>js</b>) -[thickness=1]> (style)
+(<b>js</b>) -[thickness=1]> (vodEvent)
+(<b>myboard</b>) -[thickness=1]> (clientInfo/styleMaker)
+(<b>myFavoMov</b>) -[thickness=1]> (clientInfo/styleMaker)
+(<b>myInfo</b>) ---[thickness=1]> (eventMyInfoMain)
+(<b>myInfo</b>) -[thickness=1]> (myInfoStyleMaker)
+(<b>writeForum</b>) -[thickness=1]> (writeForum/styleMaker)
+
+@enduml
+
+
+' View and edit on https://arkit.pro
+]]></script></g></svg>

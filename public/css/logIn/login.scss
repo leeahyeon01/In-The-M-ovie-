@@ -1,0 +1,63 @@
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+.form {
+  border: solid 1px black;
+  width: 350px;
+  height: 300px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & > div:nth-child(1) {
+    width: 200px;
+    font-style: oblique;
+    font-size: medium;
+  }
+
+  & > input {
+    width: 200px;
+    margin: 4px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  & > div {
+    width: 250px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  & > button {
+    border: 1px solid black;
+    width: 70px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: azure;
+  }
+}

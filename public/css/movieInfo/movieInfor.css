@@ -1,0 +1,64 @@
+div {
+  border: solid 1px black;
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.maindiv {
+  width: 600px;
+  height: 700px;
+  border: solid 1px black;
+}
+
+.head {
+  display: flex;
+  justify-content: flex-end;
+}
+.head > div {
+  width: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.section {
+  display: flex;
+}
+
+.poster {
+  width: 300px;
+  height: 500px;
+  /* background-image: url(../../../source/img/gongjo2.jpeg); */
+  background-size: cover;
+}
+
+.informa {
+  width: 300px;
+  height: 500px;
+}
+.informa > span {
+  color: red;
+  font-weight: bold;
+  display: inline-flex;
+}
+.informa > div:nth-child(2) {
+  display: block;
+}
+.informa > div {
+  width: 250px;
+  display: inline-flex;
+}
+
+.like {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=movieInfor.css.map */

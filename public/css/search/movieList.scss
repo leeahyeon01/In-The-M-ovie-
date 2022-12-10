@@ -1,0 +1,77 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin size($width, $height){
+  width: $width;
+  height: $height;
+}
+
+@mixin flexSet($justity, $align, $direction:row){
+  display: flex;
+  justify-content: $justity;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+$col-1: #D9D9D9;
+$col-2: #FEF8F8;
+$col-3: rgba(45, 45, 45, 0.5);
+
+#app{
+  @include size(100vw,auto);
+  background-image: url('../../../source/img/bg_dpimg.png');
+
+  &> header {
+    width: 100vw;
+    height: 10vh;
+    background-color: $col-3;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    place-content: center flex-start;
+    align-items: center;
+    color: rgb(214, 214, 214);
+    &> div {
+      width: 50%;
+      display: flex;
+      flex-flow: row nowrap;
+      place-content: center space-evenly;
+      align-items: center;
+    }
+  }
+  
+  main{
+    @include size(100vw, 80vh);
+    @include flexSet(space-evenly,center,column);
+    
+  
+    &>div{
+      @include size(100vw,25vh);
+      @include flexSet(center,center,row);
+  
+      &>div{
+        @include size(18vw,23vh);
+        margin:  5px;
+        // background-color: $col-2;
+        background-image: url(../../../source/img/gongjo2.jpeg);
+        background-size: cover;
+      }  
+      div:hover{
+        cursor: pointer;
+      }
+    }  
+  }
+
+  &> footer {
+    width: 100vw;
+    height: 30vh;
+    background-color: $col-3;    
+    color: rgba(214, 214, 214, 1);    
+  }
+
+}
+
+
+

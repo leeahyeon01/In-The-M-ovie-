@@ -5,14 +5,14 @@ import request from "request";
 import * as fs from "fs";
 import alert from "alert";
 
-import { allowedNodeEnvironmentFlags } from "process";
+// import { allowedNodeEnvironmentFlags } from "process";
 
 const dbconfig = {
   host: "localhost",
   user: "root",
-  password: "1019",
-  port: "3306",
-  database: "in_the_m",
+  password: "root",
+  port: "8888",
+  database: "inthem",
 };
 
 const connection = mysql.createConnection(dbconfig);

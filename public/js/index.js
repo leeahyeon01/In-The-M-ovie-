@@ -24,18 +24,17 @@ const menuDiv = header.children[0];
 const menuDivChildren = ["div", "div", "div", "div", "div"];
 styleMaker.tagMaker(menuDiv, menuDivChildren, "");
 
-
 const searchDiv = menuDiv.children[0];
 searchDiv.textContent = "검색";
 searchDiv.style.cursor = "pointer";
-searchDiv.addEventListener("click", event => {
+searchDiv.addEventListener("click", (event) => {
   location.href = "/searchMovie";
 });
 const signDiv = menuDiv.children[1];
 signDiv.style.cursor = "pointer";
 signDiv.textContent = "로그인";
 
-signDiv.addEventListener("click", event => {
+signDiv.addEventListener("click", (event) => {
   location.href = "/logIn";
 });
 
@@ -47,17 +46,16 @@ const myInfoDiv = menuDiv.children[3];
 myInfoDiv.style.cursor = "pointer";
 myInfoDiv.textContent = "마이페이지";
 
-myInfoDiv.addEventListener("click", event => {
+myInfoDiv.addEventListener("click", (event) => {
   location.href = "/myInfo";
 });
 
 const boardDiv = menuDiv.children[4];
 boardDiv.textContent = "게시판";
 boardDiv.style.cursor = "pointer";
-boardDiv.addEventListener("click", event => {
+boardDiv.addEventListener("click", (event) => {
   location.href = "/board";
 });
-
 
 const mainChildren = ["div", "section"];
 styleMaker.tagMaker(main, mainChildren);
@@ -95,12 +93,12 @@ const tmdbInfo = (query, targetDiv) => {
   request.open("GET", url);
   request.responseType = "json";
   request.send();
-  request.addEventListener("load", event => {
+  request.addEventListener("load", (event) => {
     const apiDat = request.response;
     console.log(apiDat);
     const urlParam = `/randomMovieParam?title=${apiDat.results[0].title}&rate=${apiDat.results[0].vote_average}&nation=${apiDat.results[0].original_language}&text=${apiDat.results[0].overview}&date=${apiDat.results[0].release_date}&poster=https://image.tmdb.org/t/p/w500${apiDat.results[0].poster_path}`;
 
-    targetDiv.addEventListener("click", event => {
+    targetDiv.addEventListener("click", (event) => {
       popup(urlParam, "검색한 영화!", 730, 820, 100, 200, "no");
     });
   });
@@ -151,18 +149,6 @@ arrTag.push(footer);
 
 styleMaker.styling(arrTag, indexCss.indexCss);
 
-<<<<<<< HEAD
-
-
-
-//footer.style.display = "flex";
-//footer.style.height = "30vh";
-
-
-
-
-=======
->>>>>>> fbde40f8d08d6c38fae7146aaff80221fbcb6c33
 styleMaker.tagMaker(footer, "div", "");
 const footerDiv = footer.children[0];
 const footerDivChildren = ["div", "div", "div"];

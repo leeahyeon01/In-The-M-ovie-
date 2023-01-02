@@ -1,10 +1,11 @@
 const app = document.getElementById("app");
 
-function formMaker(){
+function formMaker() {
   const form = document.createElement("form");
-  form.setAttribute("action", "post");
+  form.setAttribute("method", "POST");
   form.setAttribute("id", "form");
-  form.setAttribute("onsubmit", "return false");
+  form.setAttribute("enctype", "x-www-form-urlencoded");
+  form.setAttribute("action", "/signUp");
   app.appendChild(form);
   // app > form
 
@@ -27,6 +28,7 @@ function formMaker(){
   const confirmButton = document.createElement("button");
   confirmButtonDiv.appendChild(confirmButton);
   confirmButton.textContent = "중복확인";
+  confirmButton.type = "submit";
   // app > form > div:nth-child(2) > button
 
   const emailDiv = document.createElement("div");
@@ -70,6 +72,7 @@ function formMaker(){
   // app > form > div:nth-child(6)
 
   const signInButton = document.createElement("button");
+  signInButton.type = "submit";
   signInButtonDiv.appendChild(signInButton);
   signInButton.textContent = "가입하기";
   // app > form > div:nth-child(6) >  button

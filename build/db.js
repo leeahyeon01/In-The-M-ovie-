@@ -6,19 +6,17 @@
 // }
 
 const dbconfig = {
-  host: 'localhost',
-  user: 'root',
-  passsword: '1234',
-  port: '3306',
-  database: 'inthem'
-}
+  host: "localhost",
+  user: "root",
+  passsword: "root",
+  port: "8888",
+  database: "inthem",
+};
 
 export default dbconfig;
 
-
 // import express from 'express';
 // import mysql from 'mysql';
-
 
 // const express = require('express');
 // const mysql      = require('mysql');
@@ -53,11 +51,6 @@ export default dbconfig;
 //   password : '< MySQL password >',
 //   database : 'my_db'
 // };
-
-
-
-
-
 
 // const { query } = require('express');
 // const mysql = require('mysql');

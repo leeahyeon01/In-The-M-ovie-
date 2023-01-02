@@ -58,7 +58,6 @@ header.appendChild(homeDiv);
 homeDiv.textContent = "홈으로";
 homeDiv.setAttribute("id", "home");
 homeDiv.style.cursor = "pointer";
-// homeDiv.style.marginRight = "35rem";
 homeDiv.addEventListener('click', (e)=>{
   location.href = '/';
 });
